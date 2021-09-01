@@ -205,50 +205,18 @@
     "scss/no-duplicate-mixins": true,
 
     "order/order": [
-      "custom-properties",
       "dollar-variables",
+      "custom-properties",
       {
         "type": "at-rule",
-        "name": "exdend"
+        "name": "extend"
       },
       {
         "type": "at-rule",
         "name": "include"
       },
       "declarations",
-      {
-        "type": "rule",
-        "selector": "/^&::/"
-      },
       "rules",
-      {
-        "type": "rule",
-        "selector": "/^[>~+]/"
-      },
-      {
-        "type": "rule",
-        "selector": "/^&[-[.]/"
-      },
-      {
-        "type": "rule",
-        "selector": "/&$/"
-      },
-      {
-        "type": "at-rule",
-        "name": "each"
-      },
-      {
-        "type": "at-rule",
-        "name": "for"
-      },
-      {
-        "type": "at-rule",
-        "name": "while"
-      },
-      {
-        "type": "rule",
-        "selector": "/^&:[^:]/"
-      },
       "at-rules"
     ],
     "order/properties-order": [

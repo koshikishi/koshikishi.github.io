@@ -1,0 +1,57 @@
+{
+  "name": "webdevden",
+  "version": "0.1.0",
+  "devDependencies": {
+    "@htmlacademy/editorconfig-cli": "^1.0.0",
+    "autoprefixer": "^10.3.3",
+    "browser-sync": "^2.27.5",
+    "cssnano": "^5.0.8",
+    "del": "^6.0.0",
+    "eslint": "^7.32.0",
+    "gulp": "^4.0.2",
+    "gulp-html-minifier-terser": "^6.0.1",
+    "gulp-libsquoosh": "^1.0.9",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-svgmin": "^4.0.1",
+    "gulp-terser": "^2.0.1",
+    "htmlhint": "^0.15.1",
+    "path": "^0.12.7",
+    "postcss": "^8.3.6",
+    "sass": "^1.38.2",
+    "stylelint": "^13.13.1",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.20.1"
+  },
+  "scripts": {
+    "editorconfig": "editorconfig-cli",
+    "htmlhint": "htmlhint source/*.html",
+    "eslint": "eslint source/js/",
+    "stylelint": "stylelint \"source/scss/**/*.scss\" --syntax scss",
+    "test": "npm run editorconfig && npm run htmlhint && npm run eslint && npm run stylelint",
+    "build": "gulp build",
+    "start": "gulp"
+  },
+  "repository": "github:koshikishi/koshikishi.github.io",
+  "license": "MIT",
+  "homepage": "https://koshikishi.github.io/",
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "not ie <= 11"
+  ],
+  "editorconfig-cli": [
+    "*.json",
+    "*.js",
+    "source/*.html",
+    "source/js/**/*.js",
+    "source/img/**/*.svg",
+    "source/scss/**/*.scss"
+  ],
+  "engines": {
+    "node": "^12 || ^14"
+  }
+}

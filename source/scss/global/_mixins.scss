@@ -1,0 +1,20 @@
+// Output of the @font-face rule for connecting a font with the specified parameters
+// $fontFamily - name of the font family (font-family property value)
+// $weightName - name of the font weight
+// $fontWeight - font weight (font-weight property value, by default: 400)
+@mixin font-face($fontFamily, $weightName, $fontWeight: 400) {
+  $fontName: $fontFamily + " " + $weightName;
+  $fontNameSpaceless: spaceless($fontFamily) + "-" + $weightName;
+
+  @font-face {
+    font-style: normal;
+    font-weight: $fontWeight;
+    font-family: $fontFamily;
+    font-display: swap;
+    src:
+      local($fontName),
+      local($fontNameSpaceless),
+      url("../fonts/#{to-lower-case($fontNameSpaceless)}.woff2") format("woff2"),
+      url("../fonts/#{to-lower-case($fontNameSpaceless)}.woff") format("woff");
+  }
+}

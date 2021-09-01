@@ -1,2 +1,8 @@
+// Imports functions and mixins
+@import "global/functions", "global/mixins";
+
+// Imports fonts
+@import "global/fonts";
+
 // Imports basic styles
 @import "global/global";

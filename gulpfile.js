@@ -145,7 +145,7 @@ const server = (done) => {
   browserSync.init({
     ui: false,
     server: 'build',
-    browser: 'google chrome',
+    browser: 'chrome',
     cors: true,
     notify: false,
   });

@@ -1,0 +1,1 @@
+{"version":3,"sources":["global/_global.scss","style.css"],"names":[],"mappings":"AAAA,EACE,oBCCF,CDEA,IAEE,WAAA,CADA,cCEF","file":"style.min.css","sourcesContent":["a {\n  text-decoration: none;\n}\n\nimg {\n  max-width: 100%;\n  height: auto;\n}\n","a {\n  text-decoration: none;\n}\n\nimg {\n  max-width: 100%;\n  height: auto;\n}"]}

@@ -7,27 +7,35 @@
     <link rel="stylesheet" href="css/style.min.css">
   </head>
   <body class="page__body">
-    <header class="header">
-      <div class="container">
-        <div class="logo">
-          <img src="img/logo.svg" alt="WebDevDen site logo" width="171" height="20">
-        </div>
-        <nav class="main-menu">
-          <button class="main-menu__toggle" type="button" aria-label="Open menu">
+    <header class="page__header header">
+      <div class="header__wrapper">
+        <div class="header__inner">
+          <div class="header__logo logo">
+            <img src="img/logo.svg" alt="WebDevDen site logo" width="173" height="22">
+          </div>
+          <button class="header__toggle" type="button" aria-label="Open menu">
             <span></span>
             <span></span>
             <span></span>
             <span class="visually-hidden">Open menu</span>
           </button>
+        </div>
+        <nav class="main-menu">
           <ul class="main-menu__list">
             <li class="main-menu__item">
-              <a href="#about">About me</a>
+              <a class="main-menu__link" href="#about">
+                <span>About me</span>
+              </a>
             </li>
             <li class="main-menu__item">
-              <a href="#projects">Projects</a>
+              <a class="main-menu__link" href="#projects">
+                <span>Projects</span>
+              </a>
             </li>
             <li class="main-menu__item">
-              <a href="#contacts">Contacts</a>
+              <a class="main-menu__link" href="#contacts">
+                <span>Contacts</span>
+              </a>
             </li>
           </ul>
         </nav>
@@ -269,7 +277,7 @@
     <footer class="footer" id="contacts">
       <div class="container">
         <div class="logo">
-          <img src="img/logo.svg" alt="WebDevDen site logo" width="171" height="20">
+          <img src="img/logo.svg" alt="WebDevDen site logo" width="173" height="22">
         </div>
         <div class="contacts">
           <p class="contacts__text">This is where you can contact me if you like</p>

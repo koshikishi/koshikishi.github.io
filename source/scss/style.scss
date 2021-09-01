@@ -1,11 +1,25 @@
 // Imports variables, functions and mixins
-@import "global/variables", "global/functions", "global/mixins";
+@import "global/variables";
+@import "global/functions";
+@import "global/mixins";
 
 // Imports fonts
 @import "global/fonts";
+
+// Imports animations
+@import "global/animations";
+
+// Imports templated and helper classes
+@import "global/extends";
+@import "blocks/visually-hidden";
 
 // Imports basic styles
 @import "global/global";
 
 // Imports page styles
 @import "blocks/page";
+@import "blocks/logo";
+
+// Imports header styles
+@import "blocks/header";
+@import "blocks/main-menu";

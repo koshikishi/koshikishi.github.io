@@ -1,0 +1,13 @@
+.page {
+  font: 500 14px "Fira Mono", "Courier New", monospace;
+  color: var(--color-white);
+}
+
+.page__body {
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background-color: var(--color-dark);
+}

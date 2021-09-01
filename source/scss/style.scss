@@ -1,8 +1,11 @@
-// Imports functions and mixins
-@import "global/functions", "global/mixins";
+// Imports variables, functions and mixins
+@import "global/variables", "global/functions", "global/mixins";
 
 // Imports fonts
 @import "global/fonts";
 
 // Imports basic styles
 @import "global/global";
+
+// Imports page styles
+@import "blocks/page";

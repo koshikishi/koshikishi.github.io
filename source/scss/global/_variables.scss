@@ -1,0 +1,23 @@
+// Breakpoints
+$deviceTablet: 768px;
+
+// Colors
+$colorWhite: #ffffff;
+$colorDark: #272727;
+$colorGray: #747474;
+
+$colorPrimary1: #33d997;
+$colorPrimary2: #00ff99;
+$colorSecondary: #ff652f;
+$colorTertiary: #6600ff;
+
+:root {
+  --color-white: #{$colorWhite};
+  --color-dark: #{$colorDark};
+  --color-gray: #{$colorGray};
+
+  --color-primary-1: #{$colorPrimary1};
+  --color-primary-2: #{$colorPrimary2};
+  --color-secondary: #{$colorSecondary};
+  --color-tertiary: #{$colorTertiary};
+}

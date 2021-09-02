@@ -3,22 +3,36 @@
   const menuToggler = document.querySelector('.header__toggle');
   const menuLinks = menu.querySelectorAll('.main-menu__link');
 
+  const openMenu = () => {
+    menuToggler.ariaLabel = menuToggler.lastChild.innerText = 'Close menu';
+    menuToggler.ariaExpanded = true;
+
+    addAnimationClass(menuToggler, 'header__toggle--opened');
+    addAnimationClass(menu, 'main-menu--opened');
+  };
+
+  const closeMenu = () => {
+    menuToggler.ariaLabel = menuToggler.lastChild.innerText = 'Open menu';
+    menuToggler.ariaExpanded = false;
+
+    removeAnimationClass(menuToggler, 'header__toggle--opened', 300);
+    removeAnimationClass(menu, 'main-menu--opened', 300);
+  };
+
   const onMenuButtonsClickHandler = () => {
     if (menu.classList.contains('main-menu--opened')) {
-      menuToggler.ariaLabel = menuToggler.lastChild.innerText = 'Open menu';
-
-      removeAnimationClass(menuToggler, 'header__toggle--opened', 300);
-      removeAnimationClass(menu, 'main-menu--opened', 300);
+      closeMenu();
     } else {
-      menuToggler.ariaLabel = menuToggler.lastChild.innerText = 'Close menu';
-
-      addAnimationClass(menuToggler, 'header__toggle--opened');
-      addAnimationClass(menu, 'main-menu--opened');
+      openMenu();
     }
   };
 
   const onWindowResizeHandler = function() {
     if (this.matches) {
+      if (menu.classList.contains('main-menu--opened')) {
+        closeMenu();
+      }
+
       menuToggler.removeEventListener('click', onMenuButtonsClickHandler);
 
       for (const link of menuLinks) {

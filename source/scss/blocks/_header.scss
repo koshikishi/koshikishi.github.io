@@ -6,6 +6,10 @@
   margin-bottom: 25px;
   background-color: var(--color-dark);
 
+  .no-js & {
+    position: initial;
+  }
+
   @media (min-width: $deviceTablet) {
     min-height: 60px;
     margin-bottom: 35px;

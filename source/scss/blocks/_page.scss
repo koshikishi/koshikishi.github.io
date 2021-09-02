@@ -11,13 +11,3 @@
   margin: 0;
   background-color: var(--color-dark);
 }
-
-.page__header {
-  position: sticky;
-  top: 0;
-  margin-bottom: 25px;
-
-  @media (min-width: $deviceTablet) {
-    margin-bottom: 35px;
-  }
-}

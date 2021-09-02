@@ -16,6 +16,8 @@ $colorTertiary: #6600ff;
   --color-dark: #{$colorDark};
   --color-gray: #{$colorGray};
 
+  --color-dark-translucent: #{rgba($colorDark, 0.75)};
+
   --color-primary-1: #{$colorPrimary1};
   --color-primary-2: #{$colorPrimary2};
   --color-secondary: #{$colorSecondary};

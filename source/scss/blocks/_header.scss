@@ -90,6 +90,7 @@
       @for $i from 1 through 3 {
         &:nth-child(#{$i}) {
           animation: 0.3s both toggle-open-#{$i};
+          animation-direction: inherit;
         }
       }
     }

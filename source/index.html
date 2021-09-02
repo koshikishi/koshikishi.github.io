@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>Web Developer's Den | Portfolio websile of front-end developer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="The portfolio website of an actively progressing front-end developer from Russia">
+    <meta name="theme-color" content="#272727">
     <link rel="preload" href="fonts/firamono-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="icon" href="favicon.ico">
@@ -52,22 +54,23 @@
       </div>
     </header>
     <main>
-      <h1 class="visually-hidden">Portfolio site of Anton Sevryukov</h1>
+      <h1 class="visually-hidden">Portfolio site Web Developer's Den</h1>
       <section class="about" id="about">
         <div class="about__wrapper">
           <h2 class="title">About me</h2>
           <div class="about__content">
-            <div class="about__author">
+            <div class="about__author h-card vcard" itemprop="creator" itemscope itemtype="http://schema.org/Person" itemref="contacts">
               <div class="about__photo">
                 <picture>
                   <source srcset="img/about-photo-tablet.webp 1x, img/about-photo-tablet@2x.webp 2x" type="image/webp">
-                  <img src="img/about-photo-tablet.jpg" srcset="img/about-photo-tablet@2x.jpg 2x" alt="Photo of Anton Sevryukov, author of the site" width="216" height="216">
+                  <img class="u-photo photo" src="img/about-photo-tablet.jpg" srcset="img/about-photo-tablet@2x.jpg 2x" alt="Photo of Anton Sevryukov, author of the site" width="216" height="216" itemprop="image">
                 </picture>
               </div>
               <p class="about__introduction">
                 Hello there,<br>
-                My name is Anton. I'm an actively progressing front-end developer from Moscow (Russia), and this is my little portfolio site.
+                My name is <span class="p-name fn" itemprop="name">Anton</span>. I'm an actively progressing <span class="p-job-title" itemprop="jobTitle">front-end developer</span> from <span class="h-adr adr" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><span class="p-locality locality" itemprop="addressLocality">Moscow</span> (<span class="p-country-name country-name" itemprop="addressCountry">Russia</span>)</span>, and this is my little portfolio site.
               </p>
+              <meta itemprop="url" content="https://koshikishi.github.io/">
             </div>
             <div class="about__info">
               <div class="about__taglist">
@@ -163,119 +166,119 @@
           <h2 class="title">Projects</h2>
           <p class="projects__description">Here are some of my last projects I worked on.</p>
           <div class="projects__list">
-            <article class="work work--responsive">
+            <article class="work work--responsive" itemscope itemtype="https://schema.org/WebSite" itemref="about">
               <div class="work__image">
                 <picture>
                   <source srcset="img/work-fanttex-tablet.webp 1x, img/work-fanttex-tablet@2x.webp 2x" media="(min-width: 768px)" type="image/webp">
                   <source srcset="img/work-fanttex-mobile.webp 1x, img/work-fanttex-mobile@2x.webp 2x" type="image/webp">
                   <source srcset="img/work-fanttex-tablet.jpg 1x, img/work-fanttex-tablet@2x.jpg 2x" media="(min-width: 768px)">
-                  <img src="img/work-fanttex-mobile.jpg" srcset="img/work-fanttex-mobile@2x.jpg 2x" alt="Screenshot of the online store Fanttex" width="280" height="280" loading="lazy">
+                  <img src="img/work-fanttex-mobile.jpg" srcset="img/work-fanttex-mobile@2x.jpg 2x" alt="Screenshot of the online store Fanttex" width="280" height="280" loading="lazy" itemprop="image">
                 </picture>
               </div>
               <div class="work__content">
                 <div class="work__info">
-                  <h3 class="work__title">Fanttex</h3>
-                  <p class="work__description">Online fabric store with a personal user account</p>
+                  <h3 class="work__title" itemprop="name">Fanttex</h3>
+                  <p class="work__description" itemprop="description">Online fabric store with a personal user account</p>
                 </div>
                 <div class="work__links">
-                  <a class="work__link button" href="https://fanttex.ru/" target="_blank" rel="noopener noreferrer">View</a>
+                  <a class="work__link button" href="https://fanttex.ru/" target="_blank" rel="noopener noreferrer" itemprop="url">View</a>
                 </div>
               </div>
             </article>
-            <article class="work work--responsive">
+            <article class="work work--responsive" itemscope itemtype="https://schema.org/WebSite" itemref="about">
               <div class="work__image">
                 <picture>
                   <source srcset="img/work-maggregator-tablet.webp 1x, img/work-maggregator-tablet@2x.webp 2x" media="(min-width: 768px)" type="image/webp">
                   <source srcset="img/work-maggregator-mobile.webp 1x, img/work-maggregator-mobile@2x.webp 2x" type="image/webp">
                   <source srcset="img/work-maggregator-tablet.jpg 1x, img/work-maggregator-tablet@2x.jpg 2x" media="(min-width: 768px)">
-                  <img src="img/work-maggregator-mobile.jpg" srcset="img/work-maggregator-mobile@2x.jpg 2x" alt="Screenshot of the music digital aggregator website" width="280" height="280" loading="lazy">
+                  <img src="img/work-maggregator-mobile.jpg" srcset="img/work-maggregator-mobile@2x.jpg 2x" alt="Screenshot of the music digital aggregator website" width="280" height="280" loading="lazy" itemprop="image">
                 </picture>
               </div>
               <div class="work__content">
                 <div class="work__info">
-                  <h3 class="work__title">National Digital Aggregator</h3>
-                  <p class="work__description">Music digital aggregator website with Wordpress integration</p>
+                  <h3 class="work__title" itemprop="name">National Digital Aggregator</h3>
+                  <p class="work__description" itemprop="description">Music digital aggregator website with Wordpress integration</p>
                 </div>
                 <div class="work__links">
-                  <a class="work__link button" href="https://maggregator.com/" target="_blank" rel="noopener noreferrer">View</a>
+                  <a class="work__link button" href="https://maggregator.com/" target="_blank" rel="noopener noreferrer" itemprop="url">View</a>
                 </div>
               </div>
             </article>
-            <article class="work work--responsive">
+            <article class="work work--responsive" itemscope itemtype="https://schema.org/WebSite" itemref="about">
               <div class="work__image">
                 <picture>
                   <source srcset="img/work-rapidcards-tablet.webp 1x, img/work-rapidcards-tablet@2x.webp 2x" media="(min-width: 768px)" type="image/webp">
                   <source srcset="img/work-rapidcards-mobile.webp 1x, img/work-rapidcards-mobile@2x.webp 2x" type="image/webp">
                   <source srcset="img/work-rapidcards-tablet.jpg 1x, img/work-rapidcards-tablet@2x.jpg 2x" media="(min-width: 768px)">
-                  <img src="img/work-rapidcards-mobile.jpg" srcset="img/work-rapidcards-mobile@2x.jpg 2x" alt="Screenshot of the Rapid Business Cards app website" width="280" height="280" loading="lazy">
+                  <img src="img/work-rapidcards-mobile.jpg" srcset="img/work-rapidcards-mobile@2x.jpg 2x" alt="Screenshot of the Rapid Business Cards app website" width="280" height="280" loading="lazy" itemprop="image">
                 </picture>
               </div>
               <div class="work__content">
                 <div class="work__info">
-                  <h3 class="work__title">Rapid Business Cards</h3>
-                  <p class="work__description">Virtual business card for Rapid Business Cards app</p>
+                  <h3 class="work__title" itemprop="name">Rapid Business Cards</h3>
+                  <p class="work__description" itemprop="description">Virtual business card for Rapid Business Cards app</p>
                 </div>
                 <div class="work__links">
-                  <a class="work__link button" href="https://rapidcards.co/" target="_blank" rel="noopener noreferrer">View</a>
+                  <a class="work__link button" href="https://rapidcards.co/" target="_blank" rel="noopener noreferrer" itemprop="url">View</a>
                 </div>
               </div>
             </article>
-            <article class="work work--responsive">
+            <article class="work work--responsive" itemscope itemtype="https://schema.org/WebSite" itemref="about">
               <div class="work__image">
                 <picture>
                   <source srcset="img/work-fiontar-tablet.webp 1x, img/work-fiontar-tablet@2x.webp 2x" media="(min-width: 768px)" type="image/webp">
                   <source srcset="img/work-fiontar-mobile.webp 1x, img/work-fiontar-mobile@2x.webp 2x" type="image/webp">
                   <source srcset="img/work-fiontar-tablet.jpg 1x, img/work-fiontar-tablet@2x.jpg 2x" media="(min-width: 768px)">
-                  <img src="img/work-fiontar-mobile.jpg" srcset="img/work-fiontar-mobile@2x.jpg 2x" alt="Screenshot of the WordPress template Fiontar" width="280" height="280" loading="lazy">
+                  <img src="img/work-fiontar-mobile.jpg" srcset="img/work-fiontar-mobile@2x.jpg 2x" alt="Screenshot of the WordPress template Fiontar" width="280" height="280" loading="lazy" itemprop="image">
                 </picture>
               </div>
               <div class="work__content">
                 <div class="work__info">
-                  <h3 class="work__title">Fiontar</h3>
-                  <p class="work__description">Responsive business template for WordPress</p>
+                  <h3 class="work__title" itemprop="name">Fiontar</h3>
+                  <p class="work__description" itemprop="description">Responsive business template for WordPress</p>
                 </div>
                 <div class="work__links">
-                  <a class="work__link button" href="https://makehtml.github.io/fiontar-html" target="_blank" rel="noopener noreferrer">View (demo)</a>
+                  <a class="work__link button" href="https://makehtml.github.io/fiontar-html" target="_blank" rel="noopener noreferrer" itemprop="url">View (demo)</a>
                 </div>
               </div>
             </article>
-            <article class="work work--adaptive work--training">
+            <article class="work work--adaptive work--training" itemscope itemtype="https://schema.org/WebSite" itemref="about">
               <div class="work__image">
                 <picture>
                   <source srcset="img/work-lotos-tablet.webp 1x, img/work-lotos-tablet@2x.webp 2x" media="(min-width: 768px)" type="image/webp">
                   <source srcset="img/work-lotos-mobile.webp 1x, img/work-lotos-mobile@2x.webp 2x" type="image/webp">
                   <source srcset="img/work-lotos-tablet.jpg 1x, img/work-lotos-tablet@2x.jpg 2x" media="(min-width: 768px)">
-                  <img src="img/work-lotos-mobile.jpg" srcset="img/work-lotos-mobile@2x.jpg 2x" alt="Screenshot of the Lotos landing page" width="280" height="280" loading="lazy">
+                  <img src="img/work-lotos-mobile.jpg" srcset="img/work-lotos-mobile@2x.jpg 2x" alt="Screenshot of the Lotos landing page" width="280" height="280" loading="lazy" itemprop="image">
                 </picture>
               </div>
               <div class="work__content">
                 <div class="work__info">
-                  <h3 class="work__title">Lotos</h3>
-                  <p class="work__description">Yoga school landing page</p>
+                  <h3 class="work__title" itemprop="name">Lotos</h3>
+                  <p class="work__description" itemprop="description">Yoga school landing page</p>
                 </div>
                 <div class="work__links">
-                  <a class="work__link button" href="https://koshikishi.github.io/lotos/" target="_blank" rel="noopener noreferrer">View</a>
-                  <a class="work__link button button--secondary" href="https://github.com/koshikishi/lotos" target="_blank" rel="noopener noreferrer">GitHub</a>
+                  <a class="work__link button" href="https://koshikishi.github.io/lotos/" target="_blank" rel="noopener noreferrer" itemprop="url">View</a>
+                  <a class="work__link button button--secondary" href="https://github.com/koshikishi/lotos" target="_blank" rel="noopener noreferrer" itemprop="sameAs">GitHub</a>
                 </div>
               </div>
             </article>
-            <article class="work work--responsive work--training">
+            <article class="work work--responsive work--training" itemscope itemtype="https://schema.org/WebSite" itemref="about">
               <div class="work__image">
                 <picture>
                   <source srcset="img/work-hotelcats-tablet.webp 1x, img/work-hotelcats-tablet@2x.webp 2x" media="(min-width: 768px)" type="image/webp">
                   <source srcset="img/work-hotelcats-mobile.webp 1x, img/work-hotelcats-mobile@2x.webp 2x" type="image/webp">
                   <source srcset="img/work-hotelcats-tablet.jpg 1x, img/work-hotelcats-tablet@2x.jpg 2x" media="(min-width: 768px)">
-                  <img src="img/work-hotelcats-mobile.jpg" srcset="img/work-hotelcats-mobile@2x.jpg 2x" alt="Screenshot of the cat hotel website" width="280" height="280" loading="lazy">
+                  <img src="img/work-hotelcats-mobile.jpg" srcset="img/work-hotelcats-mobile@2x.jpg 2x" alt="Screenshot of the cat hotel website" width="280" height="280" loading="lazy" itemprop="image">
                 </picture>
               </div>
               <div class="work__content">
                 <div class="work__info">
-                  <h3 class="work__title" lang="ru">Котейка</h3>
-                  <p class="work__description">Cat hotel website</p>
+                  <h3 class="work__title" lang="ru" itemprop="name">Котейка</h3>
+                  <p class="work__description" itemprop="description">Cat hotel website</p>
                 </div>
                 <div class="work__links">
-                  <a class="work__link button" href="https://koshikishi.github.io/hotelcats/" target="_blank" rel="noopener noreferrer">View</a>
-                  <a class="work__link button button--secondary" href="https://github.com/koshikishi/hotelcats" target="_blank" rel="noopener noreferrer">GitHub</a>
+                  <a class="work__link button" href="https://koshikishi.github.io/hotelcats/" target="_blank" rel="noopener noreferrer" itemprop="url">View</a>
+                  <a class="work__link button button--secondary" href="https://github.com/koshikishi/hotelcats" target="_blank" rel="noopener noreferrer" itemprop="sameAs">GitHub</a>
                 </div>
               </div>
             </article>
@@ -294,8 +297,8 @@
         <div class="footer__contacts contacts">
           <p class="contacts__text">This is where you can contact me if you like</p>
           <div class="contacts__links">
-            <a class="contacts__link button" href="https://github.com/koshikishi" target="_blank" rel="noopener noreferrer" style="--color-brand: #7b63ab;">GitHub</a>
-            <a class="contacts__link button" href="https://t.me/AntonNorthern" target="_blank" rel="noopener noreferrer" style="--color-brand: #0088cc;">Telegram</a>
+            <a class="contacts__link button" href="https://github.com/koshikishi" target="_blank" rel="noopener noreferrer" style="--color-brand: #7b63ab;" itemprop="sameAs">GitHub</a>
+            <a class="contacts__link button" href="https://t.me/AntonNorthern" target="_blank" rel="noopener noreferrer" style="--color-brand: #0088cc;" itemprop="sameAs">Telegram</a>
           </div>
         </div>
         <small class="footer__copyright">Sevryukov Anton Sergeevich © 2021</small>

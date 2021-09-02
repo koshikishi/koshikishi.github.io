@@ -1,0 +1,32 @@
+.contacts__text {
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contacts__links {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: -5px;
+  padding-bottom: 20px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    width: 60px;
+    height: 2px;
+    background-color: var(--color-primary-1);
+    border-radius: 1px;
+    transform: translateX(-50%);
+  }
+}
+
+.contacts__link {
+  margin-right: 2.5px;
+  margin-bottom: 5px;
+  margin-left: 2.5px;
+}

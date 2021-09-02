@@ -1,0 +1,28 @@
+.footer {
+  margin-bottom: 25px;
+
+  @media (min-width: $deviceTablet) {
+    margin-bottom: 35px;
+  }
+}
+
+.footer__wrapper {
+  @extend %container;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer__logo {
+  margin-bottom: 20px;
+}
+
+.footer__contacts {
+  margin-bottom: 20px;
+}
+
+.footer__copyright {
+  font-size: 12px;
+  text-align: center;
+}

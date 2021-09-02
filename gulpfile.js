@@ -60,14 +60,16 @@ exports.scripts = scripts;
 
 // Compression of raster image files with generation of *.webp format
 const optimizeImages = () => {
-  return src('source/img/*.{png,jpg}')
+  return src('source/img/**/*.{png,jpg}')
     .pipe(squoosh((file) => {
       return {
         encodeOptions: {
-          webp: {
-            quality: 90,
-            method: 6,
-          },
+          ...(path.dirname(file.path).split(path.sep).pop() === 'favicons' ? {} : {
+            webp: {
+              quality: 90,
+              method: 6,
+            },
+          }),
           ...(path.extname(file.path) === '.png' ? {
             oxipng: {
               level: 6,
@@ -87,7 +89,7 @@ exports.optimizeImages = optimizeImages;
 // Compression of vector image *.svg files
 const optimizeSvg = () => {
   return src([
-    'source/img/*.svg',
+    'source/img/**/*.svg',
     '!source/img/icon-*.svg',
   ])
     .pipe(svgmin({
@@ -100,7 +102,7 @@ exports.optimizeSvg = optimizeSvg;
 // Copying image files
 const copyImages = () => {
   return src([
-    'source/img/*.{png,jpg,svg}',
+    'source/img/**/*.{png,jpg,svg}',
     '!source/img/icon-*.svg',
   ])
     .pipe(dest('build/img'))
@@ -109,7 +111,10 @@ exports.copyImages = copyImages;
 
 // Fast generation of image files in *.webp format
 const fastWebp = () => {
-  return src('source/img/*.{png,jpg}')
+  return src([
+    'source/img/**/*.{png,jpg}',
+    '!source/img/favicons/**',
+  ])
     .pipe(squoosh({
       encodeOptions: {
         webp: {
@@ -132,6 +137,7 @@ const copy = (done) => {
   src([
     'source/fonts/**/*.{woff,woff2}',
     'source/*.ico',
+    'source/*.webmanifest',
   ], {
     base: 'source',
   })

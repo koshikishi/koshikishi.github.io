@@ -6,6 +6,10 @@
   margin-bottom: 25px;
   background-color: var(--color-dark);
 
+  .no-js & {
+    position: initial;
+  }
+
   @media (min-width: $deviceTablet) {
     min-height: 60px;
     margin-bottom: 35px;
@@ -90,6 +94,7 @@
       @for $i from 1 through 3 {
         &:nth-child(#{$i}) {
           animation: 0.3s both toggle-open-#{$i};
+          animation-direction: inherit;
         }
       }
     }

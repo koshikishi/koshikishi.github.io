@@ -1,6 +1,6 @@
 {
   "name": "webdevden",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "^1.0.0",
     "autoprefixer": "^10.3.3",

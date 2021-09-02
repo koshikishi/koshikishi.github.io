@@ -1,0 +1,13 @@
+.title {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 28px;
+  color: var(--color-secondary);
+  text-transform: uppercase;
+
+  &::before {
+    content: "# ";
+    color: var(--color-primary-1);
+  }
+}

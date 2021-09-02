@@ -19,7 +19,12 @@
 // Imports page styles
 @import "blocks/page";
 @import "blocks/logo";
+@import "blocks/title";
 
 // Imports header styles
 @import "blocks/header";
 @import "blocks/main-menu";
+
+// Imports content blocks styles
+@import "blocks/about";
+@import "blocks/tag";

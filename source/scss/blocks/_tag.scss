@@ -1,0 +1,32 @@
+.tag {
+  --color-brand: var(--color-primary-1);
+
+  display: flex;
+  max-width: 280px;
+  text-transform: lowercase;
+  overflow-wrap: break-word;
+  background-color: var(--color-brand);
+  border: 2px solid var(--color-brand);
+  border-radius: 13px;
+}
+
+.tag__name {
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 3px 8px;
+  color: var(--color-dark);
+
+  .tag--extended & {
+    max-width: 50%;
+    padding-right: 5px;
+  }
+}
+
+.tag__addintion {
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 3px 8px 3px 5px;
+  background-color: var(--color-dark);
+  border-top-right-radius: 13px;
+  border-bottom-right-radius: 13px;
+}

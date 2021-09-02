@@ -25,7 +25,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1000px;
+    max-width: 1137px; // 30 + (339 * 3 + 30 * 2) + 30
     padding-right: 30px;
     padding-left: 30px;
   }
@@ -34,7 +34,7 @@
 .header__inner {
   @media (max-width: $deviceTablet - 1) {
     display: grid;
-    grid-template-columns: minmax(20px, 1fr) minmax(auto, 600px - 20px * 2) minmax(20px, 1fr);
+    grid-template-columns: minmax(20px, 1fr) minmax(auto, 620px - 20px * 2) minmax(20px, 1fr);
     align-items: center;
     box-sizing: border-box;
     min-height: 50px;

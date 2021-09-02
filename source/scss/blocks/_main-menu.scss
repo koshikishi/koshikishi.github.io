@@ -102,7 +102,7 @@
 
   @media (max-width: $deviceTablet - 1) {
     display: grid;
-    grid-template-columns: minmax(20px, 1fr) minmax(auto, 600px - 20px * 2) minmax(20px, 1fr);
+    grid-template-columns: minmax(20px, 1fr) minmax(auto, 620px - 20px * 2) minmax(20px, 1fr);
     align-items: center;
     padding-top: 10px;
     padding-bottom: 9px;

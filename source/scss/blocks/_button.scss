@@ -1,0 +1,48 @@
+.button {
+  --color-brand: var(--color-primary-1);
+
+  display: inline-block;
+  box-sizing: border-box;
+  min-width: 100px;
+  max-width: 240px;
+  padding: 3px 8px;
+  font: inherit;
+  vertical-align: middle;
+  text-align: center;
+  color: var(--color-dark);
+  text-transform: lowercase;
+  background-color: var(--color-brand);
+  border: 2px solid var(--color-brand);
+  border-radius: 13px;
+  cursor: pointer;
+  transition:
+    color 0.3s,
+    background-color 0.3s,
+    opacity 0.3s;
+  appearance: none;
+
+  &:hover,
+  &:focus {
+    color: var(--color-white);
+    background-color: transparent;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
+
+  &--secondary {
+    color: var(--color-white);
+    background-color: transparent;
+
+    &:hover,
+    &:focus {
+      color: var(--color-dark);
+      background-color: var(--color-brand);
+    }
+  }
+}

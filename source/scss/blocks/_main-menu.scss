@@ -1,0 +1,123 @@
+.main-menu {
+  display: none;
+  background-color: var(--color-dark);
+
+  &--opened {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    animation: 0.3s both menu-open;
+  }
+
+  .no-js & {
+    display: block;
+    animation: none;
+  }
+
+  @media (min-width: $deviceTablet) {
+    position: initial;
+    z-index: initial;
+    display: block;
+    max-width: 65%;
+    animation: none;
+  }
+}
+
+.main-menu__list {
+  @extend %list-reset;
+
+  @media (min-width: $deviceTablet) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: -5px;
+  }
+}
+
+.main-menu__item {
+  min-height: 50px;
+  font-size: 26px;
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--color-gray);
+
+  @media (min-width: $deviceTablet) {
+    min-height: initial;
+    margin-bottom: 5px;
+    padding-left: 20px;
+    font-size: 16px;
+    border: none;
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+}
+
+.main-menu__link {
+  color: inherit;
+  overflow-wrap: break-word;
+  transition:
+    color 0.3s,
+    background-color 0.3s;
+
+  span {
+    position: relative;
+
+    &::before {
+      content: ">";
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: transparent;
+      transition: color 0.3s;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    span {
+      &::before {
+        color: var(--color-primary-1);
+      }
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    color: var(--color-dark);
+    background-color: var(--color-secondary);
+
+    span {
+      &::before {
+        color: var(--color-dark);
+      }
+    }
+  }
+
+  @media (max-width: $deviceTablet - 1) {
+    display: grid;
+    grid-template-columns: minmax(20px, 1fr) minmax(auto, 620px - 20px * 2) minmax(20px, 1fr);
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 9px;
+
+    span {
+      grid-column: 2 / -2;
+      padding-left: 30px;
+    }
+  }
+
+  @media (min-width: $deviceTablet) {
+    span {
+      &::before {
+        left: -20px;
+      }
+    }
+  }
+}

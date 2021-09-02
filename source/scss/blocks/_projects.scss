@@ -1,0 +1,38 @@
+.projects {
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--color-gray);
+
+  @media (min-width: $deviceTablet) {
+    margin-bottom: 35px;
+    padding-bottom: 35px;
+  }
+}
+
+.projects__wrapper {
+  @extend %container;
+}
+
+.projects__description {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.projects__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 280px);
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+
+  @media (min-width: $deviceTablet) {
+    grid-template-columns: repeat(auto-fill, 339px);
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+.projects__links {
+  display: flex;
+  justify-content: center;
+}

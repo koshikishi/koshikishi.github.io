@@ -1,2 +1,37 @@
+// Imports variables, functions and mixins
+@import "global/variables";
+@import "global/functions";
+@import "global/mixins";
+
+// Imports fonts
+@import "global/fonts";
+
+// Imports animations
+@import "global/animations";
+
+// Imports templated and helper classes
+@import "global/extends";
+@import "blocks/visually-hidden";
+
 // Imports basic styles
 @import "global/global";
+
+// Imports page styles
+@import "blocks/page";
+@import "blocks/logo";
+@import "blocks/title";
+@import "blocks/button";
+
+// Imports header styles
+@import "blocks/header";
+@import "blocks/main-menu";
+
+// Imports content blocks styles
+@import "blocks/about";
+@import "blocks/tag";
+@import "blocks/projects";
+@import "blocks/work";
+
+// Imports footer styles
+@import "blocks/footer";
+@import "blocks/contacts";

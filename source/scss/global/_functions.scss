@@ -1,11 +1,13 @@
+@use "sass:string";
+
 // Returns $string without spaces
 @function spaceless($string) {
-  $spaceIndex: str-index($string, " ");
+  $spaceIndex: string.index($string, " ");
 
   @if $spaceIndex {
     @while $spaceIndex {
-      $string: str-slice($string, 1, $spaceIndex - 1) + str-slice($string, $spaceIndex + 1);
-      $spaceIndex: str-index($string, " ");
+      $string: string.slice($string, 1, $spaceIndex - 1) + string.slice($string, $spaceIndex + 1);
+      $spaceIndex: string.index($string, " ");
     }
 
     @return $string;

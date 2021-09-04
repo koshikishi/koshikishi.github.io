@@ -2,6 +2,7 @@
   scroll-behavior: smooth;
   font: 500 14px "Fira Mono", "Courier New", monospace;
   color: var(--color-white);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .page__body {

@@ -21,7 +21,7 @@
 
 .header__wrapper {
   box-sizing: border-box;
-  min-width: 320px;
+  min-width: $deviceMobile;
   margin-right: auto;
   margin-left: auto;
 

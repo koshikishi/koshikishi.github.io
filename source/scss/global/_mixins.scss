@@ -1,3 +1,5 @@
+@use "sass:string";
+
 // Output of the @font-face rule for connecting a font with the specified parameters
 // $fontFamily - name of the font family (font-family property value)
 // $weightName - name of the font weight
@@ -14,8 +16,8 @@
     src:
       local($fontName),
       local($fontNameSpaceless),
-      url("../fonts/#{to-lower-case($fontNameSpaceless)}.woff2") format("woff2"),
-      url("../fonts/#{to-lower-case($fontNameSpaceless)}.woff") format("woff");
+      url("../fonts/#{string.to-lower-case($fontNameSpaceless)}.woff2") format("woff2"),
+      url("../fonts/#{string.to-lower-case($fontNameSpaceless)}.woff") format("woff");
   }
 }
 

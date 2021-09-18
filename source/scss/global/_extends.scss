@@ -1,6 +1,6 @@
 %container {
   box-sizing: border-box;
-  min-width: 320px;
+  min-width: $deviceMobile;
   max-width: 620px; // 20 + (280 * 2 + 20) + 20
   margin-right: auto;
   margin-left: auto;

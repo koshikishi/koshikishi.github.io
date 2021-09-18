@@ -1,15 +1,15 @@
 .page {
   scroll-behavior: smooth;
   font: 500 14px "Fira Mono", "Courier New", monospace;
-  color: var(--color-white);
+  color: var(--color-fg);
   -webkit-tap-highlight-color: transparent;
 }
 
 .page__body {
   display: grid;
   grid-template-rows: min-content 1fr min-content;
-  min-width: 320px;
+  min-width: $deviceMobile;
   min-height: 100vh;
   margin: 0;
-  background-color: var(--color-dark);
+  background-color: var(--color-bg);
 }

@@ -3,8 +3,9 @@
   width: 280px;
   min-height: 280px;
   overflow: hidden;
-  background-color: var(--color-gray);
+  color: var(--color-white);
   border-radius: 9px;
+  box-shadow: 0 0 50px -30px var(--color-fg);
 
   &:hover,
   &:focus-within {
@@ -108,10 +109,10 @@
   margin-right: 2.5px;
   margin-bottom: 5px;
   margin-left: 2.5px;
-  color: var(--color-white);
+  color: inherit;
 
   &:hover,
   &:focus {
-    color: var(--color-white);
+    color: inherit;
   }
 }

@@ -1,6 +1,6 @@
 .main-menu {
   display: none;
-  background-color: var(--color-dark);
+  background-color: var(--color-bg);
 
   &--opened {
     position: absolute;
@@ -90,12 +90,12 @@
   }
 
   &:active {
-    color: var(--color-dark);
+    color: var(--color-bg);
     background-color: var(--color-secondary);
 
     span {
       &::before {
-        color: var(--color-dark);
+        color: var(--color-bg);
       }
     }
   }

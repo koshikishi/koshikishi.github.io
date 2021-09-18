@@ -9,7 +9,7 @@
   font: inherit;
   vertical-align: middle;
   text-align: center;
-  color: var(--color-dark);
+  color: var(--color-bg);
   text-transform: lowercase;
   background-color: var(--color-brand);
   border: 2px solid var(--color-brand);
@@ -23,7 +23,7 @@
 
   &:hover,
   &:focus {
-    color: var(--color-white);
+    color: var(--color-fg);
     background-color: transparent;
   }
 
@@ -36,12 +36,12 @@
   }
 
   &--secondary {
-    color: var(--color-white);
+    color: var(--color-fg);
     background-color: transparent;
 
     &:hover,
     &:focus {
-      color: var(--color-dark);
+      color: var(--color-bg);
       background-color: var(--color-brand);
     }
   }

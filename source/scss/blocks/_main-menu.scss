@@ -17,7 +17,7 @@
     animation: none;
   }
 
-  @media (min-width: $deviceTablet) {
+  @media (min-width: $device-tablet) {
     position: initial;
     z-index: initial;
     display: block;
@@ -29,7 +29,7 @@
 .main-menu__list {
   @extend %list-reset;
 
-  @media (min-width: $deviceTablet) {
+  @media (min-width: $device-tablet) {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: -5px;
@@ -43,7 +43,7 @@
   text-transform: uppercase;
   border-bottom: 1px solid var(--color-gray);
 
-  @media (min-width: $deviceTablet) {
+  @media (min-width: $device-tablet) {
     min-height: initial;
     margin-bottom: 5px;
     padding-left: 20px;
@@ -100,7 +100,7 @@
     }
   }
 
-  @media (max-width: $deviceTablet - 1) {
+  @media (max-width: $device-tablet - 1) {
     display: grid;
     grid-template-columns: minmax(20px, 1fr) minmax(auto, 620px - 20px * 2) minmax(20px, 1fr);
     align-items: center;
@@ -113,7 +113,7 @@
     }
   }
 
-  @media (min-width: $deviceTablet) {
+  @media (min-width: $device-tablet) {
     span {
       &::before {
         left: -20px;

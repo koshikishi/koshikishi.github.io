@@ -10,7 +10,7 @@
     position: initial;
   }
 
-  @media (min-width: $deviceTablet) {
+  @media (min-width: $device-tablet) {
     min-height: 60px;
     margin-bottom: 35px;
     padding-top: 19px;
@@ -21,11 +21,11 @@
 
 .header__wrapper {
   box-sizing: border-box;
-  min-width: $deviceMobile;
+  min-width: $device-mobile;
   margin-right: auto;
   margin-left: auto;
 
-  @media (min-width: $deviceTablet) {
+  @media (min-width: $device-tablet) {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,7 +36,7 @@
 }
 
 .header__inner {
-  @media (max-width: $deviceTablet - 1) {
+  @media (max-width: $device-tablet - 1) {
     display: grid;
     grid-template-columns: minmax(20px, 1fr) minmax(auto, 620px - 20px * 2) minmax(20px, 1fr);
     align-items: center;
@@ -54,7 +54,7 @@
 }
 
 .header__logo {
-  @media (max-width: $deviceTablet - 1) {
+  @media (max-width: $device-tablet - 1) {
     grid-row-start: 1;
   }
 }
@@ -117,12 +117,12 @@
     opacity: 0.6;
   }
 
-  @media (max-width: $deviceTablet - 1) {
+  @media (max-width: $device-tablet - 1) {
     grid-row-start: 1;
     justify-self: end;
   }
 
-  @media (min-width: $deviceTablet) {
+  @media (min-width: $device-tablet) {
     display: none;
   }
 }

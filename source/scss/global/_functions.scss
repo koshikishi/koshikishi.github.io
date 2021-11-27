@@ -2,12 +2,12 @@
 
 // Returns $string without spaces
 @function spaceless($string) {
-  $spaceIndex: string.index($string, " ");
+  $space-index: string.index($string, " ");
 
-  @if $spaceIndex {
-    @while $spaceIndex {
-      $string: string.slice($string, 1, $spaceIndex - 1) + string.slice($string, $spaceIndex + 1);
-      $spaceIndex: string.index($string, " ");
+  @if $space-index {
+    @while $space-index {
+      $string: string.slice($string, 1, $space-index - 1) + string.slice($string, $space-index + 1);
+      $space-index: string.index($string, " ");
     }
 
     @return $string;

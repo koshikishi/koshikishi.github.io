@@ -1,16 +1,14 @@
 :root {
-  --color-white: #{$colorWhite};
-  --color-dark: #{$colorDark};
-  --color-gray: #{$colorGray};
-  --color-dark-translucent: #{rgba($colorDark, 0.75)};
-
+  --color-white: #{$color-white};
+  --color-dark: #{$color-dark};
+  --color-gray: #{$color-gray};
+  --color-dark-translucent: #{rgba($color-dark, 0.75)};
   --color-bg: var(--color-white);
   --color-fg: var(--color-dark);
-
-  --color-primary-1: #{$colorPrimary1};
-  --color-primary-2: #{$colorPrimary2};
-  --color-secondary: #{$colorSecondary};
-  --color-tertiary: #{$colorTertiary};
+  --color-primary-1: #{$color-primary-1};
+  --color-primary-2: #{$color-primary-2};
+  --color-secondary: #{$color-secondary};
+  --color-tertiary: #{$color-tertiary};
 
   color-scheme: light dark;
 

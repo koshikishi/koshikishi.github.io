@@ -3,11 +3,11 @@
   "version": "1.2.2",
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "^1.0.0",
-    "autoprefixer": "^10.4.7",
+    "autoprefixer": "^10.4.8",
     "browser-sync": "^2.27.10",
-    "cssnano": "^5.1.10",
-    "del": "^6.1.1",
-    "eslint": "^8.16.0",
+    "cssnano": "^5.1.12",
+    "del": "^7.0.0",
+    "eslint": "^8.21.0",
     "gulp": "^4.0.2",
     "gulp-html-minifier-terser": "^6.0.1",
     "gulp-libsquoosh": "^1.1.2",
@@ -21,9 +21,9 @@
     "htmlhint": "^1.1.4",
     "path": "^0.12.7",
     "postcss": "^8.4.14",
-    "sass": "^1.52.1",
-    "stylelint": "^14.8.5",
-    "stylelint-config-standard-scss": "^4.0.0",
+    "sass": "^1.54.0",
+    "stylelint": "^14.9.1",
+    "stylelint-config-standard-scss": "^5.0.0",
     "stylelint-order": "^5.0.0"
   },
   "scripts": {
@@ -52,6 +52,6 @@
     "source/scss/**/*.scss"
   ],
   "engines": {
-    "node": "^12 || ^14"
+    "node": "^14 || ^16"
   }
 }

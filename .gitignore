@@ -2,12 +2,12 @@
 .idea
 .vscode
 *.ai
+*.fig
 *.log
 *.pdf
 *.psd
-*.fig
-*.zip
 *.sublime*
+*.zip
 build/
 node_modules/
 npm-debug.*

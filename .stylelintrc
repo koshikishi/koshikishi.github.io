@@ -15,24 +15,13 @@
 
     "font-family-name-quotes": "always-unless-keyword",
 
-    "function-comma-newline-before": "never-multi-line",
-
     "number-max-precision": 2,
 
     "value-keyword-case": ["lower", {
       "camelCaseSvgKeywords": true
     }],
 
-    "value-list-comma-newline-before": "never-multi-line",
-
     "declaration-no-important": true,
-
-    "declaration-block-semicolon-newline-after": "always",
-    "declaration-block-semicolon-newline-before": "never-multi-line",
-
-    "block-closing-brace-newline-before": "always",
-    "block-closing-brace-space-after": "always-single-line",
-    "block-opening-brace-newline-after": "always",
 
     "selector-class-pattern": null,
     "selector-id-pattern": null,
@@ -40,21 +29,13 @@
     "selector-max-universal": 2,
     "selector-not-notation": "simple",
 
-    "selector-list-comma-newline-before": "never-multi-line",
-    "selector-list-comma-space-after": "always-single-line",
-
-    "media-query-list-comma-newline-before": "never-multi-line",
-
     "at-rule-empty-line-before": ["always", {
       "except": ["blockless-after-same-name-blockless", "first-nested"],
       "ignore": ["after-comment"],
       "ignoreAtRules": ["else"]
     }],
-    "at-rule-name-space-after": "always",
 
     "no-descending-specificity": null,
-    "linebreaks": "unix",
-    "max-line-length": null,
 
     "scss/at-each-key-value-single-line": true,
 

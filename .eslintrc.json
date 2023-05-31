@@ -47,6 +47,7 @@
     // https://eslint.org/docs/rules/#layout-formatting
     // ---------------------------------------------
     "arrow-parens": "error",
+    "brace-style": "error",
     "eol-last": "error",
     "indent": ["error", 2, {
       "SwitchCase": 1
@@ -60,6 +61,7 @@
     "quotes": ["error", "single"],
     "semi": "error",
     "semi-style": "error",
+    "space-in-parens": "error",
     "space-infix-ops": "error"
   }
 }

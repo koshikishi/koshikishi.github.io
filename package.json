@@ -3,13 +3,13 @@
   "version": "1.4.1",
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "^1.0.0",
-    "autoprefixer": "^10.4.8",
-    "browser-sync": "^2.27.10",
-    "cssnano": "^5.1.13",
+    "autoprefixer": "^10.4.14",
+    "browser-sync": "^2.29.3",
+    "cssnano": "^6.0.1",
     "del": "^7.0.0",
-    "eslint": "^8.23.0",
+    "eslint": "^8.41.0",
     "gulp": "^4.0.2",
-    "gulp-html-minifier-terser": "^7.0.0-beta.0",
+    "gulp-html-minifier-terser": "^7.1.0",
     "gulp-libsquoosh": "^1.1.2",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^9.0.1",
@@ -20,11 +20,11 @@
     "gulp-terser": "^2.1.0",
     "htmlhint": "^1.1.4",
     "path": "^0.12.7",
-    "postcss": "^8.4.16",
-    "sass": "^1.54.9",
-    "stylelint": "^14.11.0",
-    "stylelint-config-standard-scss": "^5.0.0",
-    "stylelint-order": "^5.0.0"
+    "postcss": "^8.4.24",
+    "sass": "^1.62.1",
+    "stylelint": "^15.6.2",
+    "stylelint-config-standard-scss": "^9.0.0",
+    "stylelint-order": "^6.0.3"
   },
   "scripts": {
     "editorconfig": "editorconfig-cli",
@@ -54,6 +54,6 @@
     "source/scss/**/*.scss"
   ],
   "engines": {
-    "node": "^16"
+    "node": "^16 || ^18"
   }
 }

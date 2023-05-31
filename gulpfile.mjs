@@ -9,8 +9,7 @@ import cssnano from 'cssnano';
 import rename from 'gulp-rename';
 import htmlmin from 'gulp-html-minifier-terser';
 import terser from 'gulp-terser';
-import squoosh from 'gulp-libsquoosh';
-import path from 'path';
+import sharp from 'gulp-sharp-optimize-images';
 import svgmin from 'gulp-svgmin';
 import {deleteAsync} from 'del';
 import {create as bsCreate} from 'browser-sync';
@@ -56,26 +55,29 @@ export const scripts = () => src('source/js/*.js')
   .pipe(dest('build/js'));
 
 // Compression of raster image files with generation of *.webp format
-export const optimizeImages = () => src('source/img/**/*.{png,jpg}')
-  .pipe(squoosh((file) => ({
-    encodeOptions: {
-      ...(path.dirname(file.path).split(path.sep).pop() === 'favicons' ? {} : {
-        webp: {
-          quality: 90,
-          method: 6,
-        },
-      }),
-      ...(path.extname(file.path) === '.png' ? {
-        oxipng: {
-          level: 6,
-        },
-      } : {
-        mozjpeg: {
-          quality: 80,
-        },
-      }),
+export const optimizeImages = () => src([
+  'source/img/**/*.{png,jpg}',
+  '!source/img/favicons/**',
+])
+  .pipe(sharp({
+    webp: {
+      quality: 90,
+      effort: 6,
     },
-  })))
+  }))
+  .pipe(dest('build/img'))
+  .pipe(src('source/img/**/*.{png,jpg}'))
+  .pipe(sharp({
+    png_to_png: {
+      compressionLevel: 9,
+      effort: 10,
+    },
+    jpg_to_jpg: {
+      quality: 80,
+      progressive: true,
+      mozjpeg: true,
+    },
+  }))
   .pipe(dest('build/img'));
 
 // Compression of vector image *.svg files
@@ -100,11 +102,9 @@ export const fastWebp = () => src([
   'source/img/**/*.{png,jpg}',
   '!source/img/favicons/**',
 ])
-  .pipe(squoosh({
-    encodeOptions: {
-      webp: {
-        method: 0,
-      },
+  .pipe(sharp({
+    webp: {
+      effort: 0,
     },
   }))
   .pipe(dest('build/img'));

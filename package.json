@@ -1,6 +1,18 @@
 {
   "name": "webdevden",
   "version": "1.5.2",
+  "homepage": "https://koshikishi.github.io/",
+  "license": "MIT",
+  "repository": "github:koshikishi/koshikishi.github.io",
+  "scripts": {
+    "editorconfig": "editorconfig-cli",
+    "htmlhint": "htmlhint source/*.html",
+    "eslint": "eslint source/js/",
+    "stylelint": "stylelint \"source/styles/**/*.scss\"",
+    "test": "npm run editorconfig && npm run htmlhint && npm run eslint && npm run stylelint",
+    "build": "gulp build",
+    "start": "gulp"
+  },
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "^2.0.5",
     "autoprefixer": "^10.4.14",
@@ -25,18 +37,9 @@
     "stylelint-config-standard-scss": "^10.0.0",
     "stylelint-order": "^6.0.3"
   },
-  "scripts": {
-    "editorconfig": "editorconfig-cli",
-    "htmlhint": "htmlhint source/*.html",
-    "eslint": "eslint source/js/",
-    "stylelint": "stylelint \"source/styles/**/*.scss\"",
-    "test": "npm run editorconfig && npm run htmlhint && npm run eslint && npm run stylelint",
-    "build": "gulp build",
-    "start": "gulp"
+  "engines": {
+    "node": "^16 || ^18"
   },
-  "repository": "github:koshikishi/koshikishi.github.io",
-  "license": "MIT",
-  "homepage": "https://koshikishi.github.io/",
   "browserslist": [
     "last 2 versions",
     "not dead",
@@ -51,8 +54,5 @@
     "source/js/**/*.js",
     "source/images/**/*.svg",
     "source/styles/**/*.scss"
-  ],
-  "engines": {
-    "node": "^16 || ^18"
-  }
+  ]
 }

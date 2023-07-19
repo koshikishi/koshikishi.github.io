@@ -20,7 +20,7 @@ const browserSync = bsCreate();
 // Compiling of *.css files from *.scss with autoprefixer and minification
 const sass = gulpSass(dartSass);
 
-export const styles = () => src('source/scss/style.scss')
+export const styles = () => src('source/styles/style.scss')
   .pipe(plumber())
   .pipe(sourcemaps.init())
   .pipe(sass().on('error', sass.logError))
@@ -56,8 +56,8 @@ export const scripts = () => src('source/js/*.js')
 
 // Compression of raster image files with generation of *.webp format
 export const optimizeImages = () => src([
-  'source/img/**/*.{png,jpg}',
-  '!source/img/favicons/**',
+  'source/images/**/*.{png,jpg}',
+  '!source/images/favicons/**',
 ])
   .pipe(sharp({
     webp: {
@@ -65,8 +65,8 @@ export const optimizeImages = () => src([
       effort: 6,
     },
   }))
-  .pipe(dest('build/img'))
-  .pipe(src('source/img/**/*.{png,jpg}'))
+  .pipe(dest('build/images'))
+  .pipe(src('source/images/**/*.{png,jpg}'))
   .pipe(sharp({
     png_to_png: {
       compressionLevel: 9,
@@ -78,36 +78,36 @@ export const optimizeImages = () => src([
       mozjpeg: true,
     },
   }))
-  .pipe(dest('build/img'));
+  .pipe(dest('build/images'));
 
 // Compression of vector image *.svg files
 export const optimizeSvg = () => src([
-  'source/img/**/*.svg',
-  '!source/img/icon-*.svg',
+  'source/images/**/*.svg',
+  '!source/images/icon-*.svg',
 ])
   .pipe(svgmin({
     multipass: true,
   }))
-  .pipe(dest('build/img'));
+  .pipe(dest('build/images'));
 
 // Copying image files
 export const copyImages = () => src([
-  'source/img/**/*.{png,jpg,svg}',
-  '!source/img/icon-*.svg',
+  'source/images/**/*.{png,jpg,svg}',
+  '!source/images/icon-*.svg',
 ])
-  .pipe(dest('build/img'));
+  .pipe(dest('build/images'));
 
 // Fast generation of image files in *.webp format
 export const fastWebp = () => src([
-  'source/img/**/*.{png,jpg}',
-  '!source/img/favicons/**',
+  'source/images/**/*.{png,jpg}',
+  '!source/images/favicons/**',
 ])
   .pipe(sharp({
     webp: {
       effort: 0,
     },
   }))
-  .pipe(dest('build/img'));
+  .pipe(dest('build/images'));
 
 // Deleting files in the build directory before copying
 export const clean = () => deleteAsync('build');
@@ -144,7 +144,7 @@ export const server = (done) => {
 
 // Watching changes in project files
 export const watcher = () => {
-  watch('source/scss/**/*.scss', styles);
+  watch('source/styles/**/*.scss', styles);
   watch('source/js/*.js', scripts);
   watch('source/*.html', series(html, refresh));
 };

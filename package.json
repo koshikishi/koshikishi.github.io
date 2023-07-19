@@ -29,7 +29,7 @@
     "editorconfig": "editorconfig-cli",
     "htmlhint": "htmlhint source/*.html",
     "eslint": "eslint source/js/",
-    "stylelint": "stylelint \"source/scss/**/*.scss\"",
+    "stylelint": "stylelint \"source/styles/**/*.scss\"",
     "test": "npm run editorconfig && npm run htmlhint && npm run eslint && npm run stylelint",
     "build": "gulp build",
     "start": "gulp"
@@ -49,8 +49,8 @@
     "*.js",
     "source/*.html",
     "source/js/**/*.js",
-    "source/img/**/*.svg",
-    "source/scss/**/*.scss"
+    "source/images/**/*.svg",
+    "source/styles/**/*.scss"
   ],
   "engines": {
     "node": "^16 || ^18"

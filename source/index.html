@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html class="page" lang="en">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <title>Web Developer's Den | Portfolio websile of front-end developer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="The portfolio website of an actively progressing front-end developer from Russia">
     <meta name="theme-color" content="#272727">
-    <link rel="preload" href="fonts/firamono-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/firamono-500.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="icon" href="favicon.ico">
     <link rel="icon" href="images/favicons/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="images/favicons/apple.png">
     <link rel="manifest" href="manifest.webmanifest">
   </head>
-  <body class="page__body no-js">
+  <body class="page no-js">
     <script>
       (() => {
         document.body.classList.remove('no-js');
       })();
     </script>
     <header class="header">
-      <div class="header__wrapper">
+      <div class="header__wrapper container">
         <div class="header__inner">
           <div class="header__logo logo">
-            <img src="images/logo.svg" alt="WebDevDen site logo" width="173" height="22">
+            <img src="images/logo.svg" alt="WebDevDen site logo" width="171" height="20">
           </div>
           <button class="header__toggle" type="button" aria-expanded="false" aria-controls="main_menu" aria-label="Open menu">
             <span></span>
@@ -56,7 +56,7 @@
     <main>
       <h1 class="visually-hidden">Portfolio site Web Developer's Den</h1>
       <section class="about" id="about">
-        <div class="about__wrapper">
+        <div class="container">
           <h2 class="title">About me</h2>
           <div class="about__content">
             <div class="about__author h-card vcard" itemprop="creator" itemscope itemtype="http://schema.org/Person" itemref="contacts">
@@ -66,93 +66,93 @@
                   <img class="u-photo photo" src="images/about-photo-tablet.jpg" srcset="images/about-photo-tablet@2x.jpg 2x" alt="Photo of Anton Sevryukov, author of the site" width="216" height="216" itemprop="image">
                 </picture>
               </div>
-              <p class="about__introduction">
+              <p class="about__description">
                 Hello there,<br>
                 My name is <span class="p-name fn" itemprop="name">Anton</span>. I'm an actively progressing <span class="p-job-title" itemprop="jobTitle">front-end developer</span> from <span class="h-adr adr" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><span class="p-locality locality" itemprop="addressLocality">Moscow</span> (<span class="p-country-name country-name" itemprop="addressCountry">Russia</span>)</span>, and this is my little portfolio site.
               </p>
               <meta itemprop="url" content="https://koshikishi.github.io/">
             </div>
             <div class="about__info">
-              <div class="about__taglist">
-                <h3 class="about__taglist-name">My skillset:</h3>
+              <div class="about__group">
+                <h3 class="about__group-name">My skillset:</h3>
                 <ul class="about__list">
-                  <li class="about__item tag" style="--color-brand: #e34f26;">
+                  <li class="tag" style="--color-brand: #e34f26;">
                     <span class="tag__name">HTML</span>
                   </li>
-                  <li class="about__item tag" style="--color-brand: #1572b6;">
+                  <li class="tag" style="--color-brand: #1572b6;">
                     <span class="tag__name">CSS</span>
                   </li>
-                  <li class="about__item tag" style="--color-brand: #cc6699;">
+                  <li class="tag" style="--color-brand: #cc6699;">
                     <span class="tag__name">SCSS</span>
                   </li>
-                  <li class="about__item tag" style="--color-brand: #a86454;">
+                  <li class="tag" style="--color-brand: #a86454;">
                     <span class="tag__name">Pug</span>
                   </li>
-                  <li class="about__item tag tag--extended" style="--color-brand: #f7df1e;">
+                  <li class="tag tag--extended" style="--color-brand: #f7df1e;">
                     <span class="tag__name">JS</span>
                     <span class="tag__addintion">in studying</span>
                   </li>
-                  <li class="about__item tag tag--extended" style="--color-brand: #777bb4;">
+                  <li class="tag tag--extended" style="--color-brand: #777bb4;">
                     <span class="tag__name">PHP</span>
                     <span class="tag__addintion">a little</span>
                   </li>
-                  <li class="about__item tag" style="--color-brand: #f05032;">
+                  <li class="tag" style="--color-brand: #f05032;">
                     <span class="tag__name">git</span>
                   </li>
-                  <li class="about__item tag" style="--color-brand: #cf4647;">
+                  <li class="tag" style="--color-brand: #cf4647;">
                     <span class="tag__name">Gulp</span>
                   </li>
-                  <li class="about__item tag" style="--color-brand: #cb3837;">
+                  <li class="tag" style="--color-brand: #cb3837;">
                     <span class="tag__name">npm</span>
                   </li>
-                  <li class="about__item tag" style="--color-brand: #f24e1e;">
+                  <li class="tag" style="--color-brand: #f24e1e;">
                     <span class="tag__name">Figma</span>
                   </li>
-                  <li class="about__item tag" style="--color-brand: #31a8ff;">
+                  <li class="tag" style="--color-brand: #31a8ff;">
                     <span class="tag__name">Photoshop</span>
                   </li>
                 </ul>
               </div>
-              <div class="about__taglist">
-                <h3 class="about__taglist-name">Principles I follow:</h3>
+              <div class="about__group">
+                <h3 class="about__group-name">Principles I follow:</h3>
                 <ul class="about__list">
-                  <li class="about__item tag">
+                  <li class="tag">
                     <span class="tag__name">BEM</span>
                   </li>
-                  <li class="about__item tag">
+                  <li class="tag">
                     <span class="tag__name">mobile-first</span>
                   </li>
-                  <li class="about__item tag" title="accessibility">
+                  <li class="tag" title="accessibility">
                     <span class="tag__name">a11y</span>
                   </li>
-                  <li class="about__item tag">
+                  <li class="tag">
                     <span class="tag__name">progressive enhancement</span>
                   </li>
                 </ul>
               </div>
-              <div class="about__taglist">
-                <h3 class="about__taglist-name">I code in:</h3>
+              <div class="about__group">
+                <h3 class="about__group-name">I code in:</h3>
                 <ul class="about__list">
-                  <li class="about__item tag tag--extended" style="--color-brand: #007acc;">
+                  <li class="tag tag--extended" style="--color-brand: #007acc;">
                     <span class="tag__name">VS Code</span>
                     <span class="tag__addintion">my favorite</span>
                   </li>
-                  <li class="about__item tag tag--extended" style="--color-brand: #ff9800;">
+                  <li class="tag tag--extended" style="--color-brand: #ff9800;">
                     <span class="tag__name">Sublime Text</span>
                     <span class="tag__addintion">was my first</span>
                   </li>
                 </ul>
               </div>
-              <div class="about__taglist">
-                <h3 class="about__taglist-name">Some fun facts about me:</h3>
+              <div class="about__group">
+                <h3 class="about__group-name">Some fun facts about me:</h3>
                 <ul class="about__list">
-                  <li class="about__item tag">
+                  <li class="tag">
                     <span class="tag__name">introvert</span>
                   </li>
-                  <li class="about__item tag">
+                  <li class="tag">
                     <span class="tag__name">don't smoke</span>
                   </li>
-                  <li class="about__item tag">
+                  <li class="tag">
                     <span class="tag__name">love cats</span>
                   </li>
                 </ul>
@@ -162,7 +162,7 @@
         </div>
       </section>
       <section class="projects" id="projects">
-        <div class="projects__wrapper">
+        <div class="container">
           <h2 class="title">Projects</h2>
           <p class="projects__description">Here are some of the last projects I participated in.</p>
           <div class="projects__list">
@@ -181,7 +181,7 @@
                   <p class="work__description" itemprop="description">Online fabric store with a personal user account</p>
                 </div>
                 <div class="work__links">
-                  <a class="work__link button" href="https://fanttex.ru/" target="_blank" rel="noopener noreferrer" itemprop="url">View</a>
+                  <a class="button" href="https://fanttex.ru/" target="_blank" rel="noopener noreferrer" itemprop="url">View</a>
                 </div>
               </div>
             </article>
@@ -200,7 +200,7 @@
                   <p class="work__description" itemprop="description">Music digital aggregator website with Wordpress integration</p>
                 </div>
                 <div class="work__links">
-                  <a class="work__link button" href="https://maggregator.com/" target="_blank" rel="noopener noreferrer" itemprop="url">View</a>
+                  <a class="button" href="https://maggregator.com/" target="_blank" rel="noopener noreferrer" itemprop="url">View</a>
                 </div>
               </div>
             </article>
@@ -219,7 +219,7 @@
                   <p class="work__description" itemprop="description">Virtual business card for Rapid Business Cards app</p>
                 </div>
                 <div class="work__links">
-                  <a class="work__link button" href="https://rapidcards.co/" target="_blank" rel="noopener noreferrer" itemprop="url">View</a>
+                  <a class="button" href="https://rapidcards.co/" target="_blank" rel="noopener noreferrer" itemprop="url">View</a>
                 </div>
               </div>
             </article>
@@ -238,7 +238,7 @@
                   <p class="work__description" itemprop="description">Responsive business template for WordPress</p>
                 </div>
                 <div class="work__links">
-                  <a class="work__link button" href="https://makehtml.github.io/fiontar-html" target="_blank" rel="noopener noreferrer" itemprop="url">View (demo)</a>
+                  <a class="button" href="https://makehtml.github.io/fiontar-html" target="_blank" rel="noopener noreferrer" itemprop="url">View (demo)</a>
                 </div>
               </div>
             </article>
@@ -257,8 +257,8 @@
                   <p class="work__description" itemprop="description">Yoga school landing page</p>
                 </div>
                 <div class="work__links">
-                  <a class="work__link button" href="https://koshikishi.github.io/lotos/" target="_blank" rel="noopener noreferrer" itemprop="url">View</a>
-                  <a class="work__link button button--secondary" href="https://github.com/koshikishi/lotos" target="_blank" rel="noopener noreferrer" itemprop="sameAs">GitHub</a>
+                  <a class="button" href="https://koshikishi.github.io/lotos/" target="_blank" rel="noopener noreferrer" itemprop="url">View</a>
+                  <a class="button button--secondary" href="https://github.com/koshikishi/lotos" target="_blank" rel="noopener noreferrer" itemprop="sameAs">GitHub</a>
                 </div>
               </div>
             </article>
@@ -277,8 +277,8 @@
                   <p class="work__description" itemprop="description">Cat hotel website</p>
                 </div>
                 <div class="work__links">
-                  <a class="work__link button" href="https://koshikishi.github.io/hotelcats/" target="_blank" rel="noopener noreferrer" itemprop="url">View</a>
-                  <a class="work__link button button--secondary" href="https://github.com/koshikishi/hotelcats" target="_blank" rel="noopener noreferrer" itemprop="sameAs">GitHub</a>
+                  <a class="button" href="https://koshikishi.github.io/hotelcats/" target="_blank" rel="noopener noreferrer" itemprop="url">View</a>
+                  <a class="button button--secondary" href="https://github.com/koshikishi/hotelcats" target="_blank" rel="noopener noreferrer" itemprop="sameAs">GitHub</a>
                 </div>
               </div>
             </article>
@@ -290,15 +290,15 @@
       </section>
     </main>
     <footer class="footer" id="contacts">
-      <div class="footer__wrapper">
+      <div class="footer__wrapper container">
         <div class="footer__logo logo">
-          <img src="images/logo.svg" alt="WebDevDen site logo" width="173" height="22">
+          <img src="images/logo.svg" alt="WebDevDen site logo" width="171" height="20">
         </div>
         <div class="footer__contacts contacts">
           <p class="contacts__text">This is where you can contact me if you like</p>
           <div class="contacts__links">
-            <a class="contacts__link button button--contrast" href="https://github.com/koshikishi" target="_blank" rel="noopener noreferrer" style="--color-brand: #181717;" itemprop="sameAs">GitHub</a>
-            <a class="contacts__link button" href="https://t.me/AntonNorthern" target="_blank" rel="noopener noreferrer" style="--color-brand: #26a5e4;" itemprop="sameAs">Telegram</a>
+            <a class="button button--contrast" href="https://github.com/koshikishi" target="_blank" rel="noopener noreferrer" style="--color-brand: #181717;" itemprop="sameAs">GitHub</a>
+            <a class="button" href="https://t.me/AntonNorthern" target="_blank" rel="noopener noreferrer" style="--color-brand: #26a5e4;" itemprop="sameAs">Telegram</a>
           </div>
         </div>
         <small class="footer__copyright">Sevryukov Anton Sergeevich © 2021</small>

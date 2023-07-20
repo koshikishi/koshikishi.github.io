@@ -1,14 +1,15 @@
 :root {
-  --color-white: #{$color-white};
-  --color-dark: #{$color-dark};
-  --color-gray: #{$color-gray};
-  --color-dark-translucent: #{rgba($color-dark, 0.75)};
+  --color-white: #ffffff;
+  --color-dark: #272727;
+  --color-gray: #747474;
+  --color-dark-translucent: #{rgba(#272727, 0.75)};
   --color-bg: var(--color-white);
   --color-fg: var(--color-dark);
-  --color-primary-1: #{$color-primary-1};
-  --color-primary-2: #{$color-primary-2};
-  --color-secondary: #{$color-secondary};
-  --color-tertiary: #{$color-tertiary};
+  --color-primary-1: #33d997;
+  --color-primary-2: #00ff99;
+  --color-secondary: #ff652f;
+  --color-tertiary: #6600ff;
+  --animation-duration: 0.3s;
 
   color-scheme: light dark;
 
@@ -18,7 +19,23 @@
   }
 }
 
+html {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  font: 500 14px $font-primary;
+}
+
+body {
+  min-width: $width-mobile;
+  margin: 0;
+  color: var(--color-fg);
+  text-size-adjust: 100%;
+  background-color: var(--color-bg);
+  -webkit-tap-highlight-color: transparent;
+}
+
 a {
+  color: inherit;
   text-decoration: none;
 }
 

@@ -1,0 +1,33 @@
+@use "sass:string";
+
+/// Replaces in a string all matches of a $substring by a $replacement. If no match is found, returns the original string.
+///
+/// @param {string} $string - an original string
+/// @param {string} $substring - a string to be replaced
+/// @param {string} $replacement [""] - a string that replaces the $substring
+/// @return {string} - a new string with all matches of the $substring replaced by the $replacement
+@function replace($string, $substring, $replacement: "") {
+  $index: string.index($string, $substring);
+
+  @if $index {
+    @return string.slice($string, 1, $index - 1) + $replacement + replace(string.slice($string, $index + string.length($substring)), $substring, $replacement);
+  }
+
+  @return $string;
+}
+
+/// Removes all whitespaces from a string.
+///
+/// @param {string} $string - an original string
+/// @return {string} - a new string stripped of whitespaces
+@function to-spaceless($string) {
+  @return replace($string, " ");
+}
+
+/// Capitalizes the first letter of a string.
+///
+/// @param {string} $string - an original string
+/// @return {string} - a new string with the capitalized first letter
+@function capitalize($string) {
+  @return string.to-upper-case(string.slice($string, 1, 1)) + string.slice($string, 2);
+}

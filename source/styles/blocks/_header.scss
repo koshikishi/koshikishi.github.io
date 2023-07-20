@@ -3,16 +3,14 @@
   top: 0;
   z-index: 1;
   box-sizing: border-box;
-  margin-bottom: 25px;
   background-color: var(--color-bg);
 
   .no-js & {
     position: initial;
   }
 
-  @media (min-width: $device-tablet) {
+  @media (min-width: $width-tablet) {
     min-height: 60px;
-    margin-bottom: 35px;
     padding-top: 19px;
     padding-bottom: 19px;
     border-bottom: 1px solid var(--color-gray);
@@ -20,23 +18,21 @@
 }
 
 .header__wrapper {
-  box-sizing: border-box;
-  min-width: $device-mobile;
-  margin-right: auto;
-  margin-left: auto;
+  @media (max-width: $width-tablet - 1) {
+    max-width: none;
+    padding-right: 0;
+    padding-left: 0;
+  }
 
-  @media (min-width: $device-tablet) {
+  @media (min-width: $width-tablet) {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1137px; // 30 + (339 * 3 + 30 * 2) + 30
-    padding-right: 30px;
-    padding-left: 30px;
   }
 }
 
 .header__inner {
-  @media (max-width: $device-tablet - 1) {
+  @media (max-width: $width-tablet - 1) {
     display: grid;
     grid-template-columns: minmax(20px, 1fr) minmax(auto, 620px - 20px * 2) minmax(20px, 1fr);
     align-items: center;
@@ -54,7 +50,7 @@
 }
 
 .header__logo {
-  @media (max-width: $device-tablet - 1) {
+  @media (max-width: $width-tablet - 1) {
     grid-row-start: 1;
   }
 }
@@ -70,8 +66,8 @@
   border: none;
   cursor: pointer;
   transition:
-    color 0.3s,
-    opacity 0.3s;
+    color var(--animation-duration),
+    opacity var(--animation-duration);
   appearance: none;
 
   span {
@@ -93,7 +89,7 @@
     span {
       @for $i from 1 through 3 {
         &:nth-child(#{$i}) {
-          animation: 0.3s both toggle-open-#{$i};
+          animation: var(--animation-duration) both toggle-open-#{$i};
           animation-direction: inherit;
         }
       }
@@ -117,12 +113,12 @@
     opacity: 0.6;
   }
 
-  @media (max-width: $device-tablet - 1) {
+  @media (max-width: $width-tablet - 1) {
     grid-row-start: 1;
     justify-self: end;
   }
 
-  @media (min-width: $device-tablet) {
+  @media (min-width: $width-tablet) {
     display: none;
   }
 }

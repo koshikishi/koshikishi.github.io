@@ -16,9 +16,9 @@
   border-radius: 13px;
   cursor: pointer;
   transition:
-    color 0.3s,
-    background-color 0.3s,
-    opacity 0.3s;
+    color var(--animation-duration),
+    background-color var(--animation-duration),
+    opacity var(--animation-duration);
   appearance: none;
 
   &:hover,

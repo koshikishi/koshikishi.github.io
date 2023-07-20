@@ -10,7 +10,8 @@ import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 import rename from 'gulp-rename';
 import htmlmin from 'gulp-html-minifier-terser';
-import terser from 'gulp-terser';
+import webpack from 'webpack-stream';
+import webpackConfig from './webpack.config.mjs';
 import sharp from 'gulp-sharp-optimize-images';
 import svgmin from 'gulp-svgmin';
 import {deleteAsync} from 'del';
@@ -74,14 +75,9 @@ export const html = () => src(`${Path.Source.ROOT}/*.html`)
   }))
   .pipe(dest(Path.Build.ROOT));
 
-// Minification of *.js script files
-export const scripts = () => src(`${Path.Source.JS}/*.js`)
-  .pipe(sourcemaps.init())
-  .pipe(terser())
-  .pipe(rename({
-    suffix: '.min',
-  }))
-  .pipe(sourcemaps.write('.'))
+// Transpilation and minification of *.js script files
+export const scripts = () => src(`${Path.Source.JS}/main.js`)
+  .pipe(webpack(webpackConfig))
   .pipe(dest(Path.Build.JS));
 
 // Compressing raster image files with generation of *.webp and *.avif format

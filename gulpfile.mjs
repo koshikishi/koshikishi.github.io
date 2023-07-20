@@ -73,7 +73,7 @@ export const scripts = () => src(`${Path.Source.JS}/*.js`)
   .pipe(sourcemaps.write('.'))
   .pipe(dest(Path.Build.JS));
 
-// Compressing raster image files with generation of *.webp format
+// Compressing raster image files with generation of *.webp and *.avif format
 export const optimizeImages = () => src([
   `${Path.Source.IMAGES}/**/*.{png,jpg}`,
   `!${Path.Source.FAVICONS}/**`,
@@ -82,6 +82,10 @@ export const optimizeImages = () => src([
     webp: {
       quality: 80,
       effort: 6,
+    },
+    avif: {
+      quality: 65,
+      effort: 9,
     },
   }))
   .pipe(dest(Path.Build.IMAGES))
@@ -116,13 +120,16 @@ export const copyImages = () => src([
 ])
   .pipe(dest(Path.Build.IMAGES));
 
-// Fast generation of image files in *.webp format
-export const fastWebp = () => src([
+// Fast generation of image files in *.webp and *.avif format
+export const fastImages = () => src([
   `${Path.Source.IMAGES}/**/*.{png,jpg}`,
   `!${Path.Source.FAVICONS}/**`,
 ])
   .pipe(sharp({
     webp: {
+      effort: 0,
+    },
+    avif: {
       effort: 0,
     },
   }))
@@ -191,7 +198,7 @@ export const dev = series(
     scripts,
     optimizeSvg,
     copyImages,
-    fastWebp,
+    fastImages,
   ),
   server,
   watcher,

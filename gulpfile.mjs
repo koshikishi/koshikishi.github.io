@@ -4,6 +4,8 @@ import sourcemaps from 'gulp-sourcemaps';
 import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 import postcss from 'gulp-postcss';
+import postcssNormalize from 'postcss-normalize';
+import postcssPresetEnv from 'postcss-preset-env';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 import rename from 'gulp-rename';
@@ -44,6 +46,15 @@ export const styles = () => src(`${Path.Source.STYLES}/style.scss`)
   .pipe(sourcemaps.init())
   .pipe(sass().on('error', sass.logError))
   .pipe(postcss([
+    postcssNormalize(),
+    postcssPresetEnv({
+      features: {
+        'overflow-wrap-property': {
+          method: 'copy',
+        },
+      },
+      enableClientSidePolyfills: false,
+    }),
     autoprefixer(),
     cssnano(),
   ]))

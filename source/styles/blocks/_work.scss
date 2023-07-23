@@ -39,42 +39,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 58px 20px 20px;
+  padding: 53px 20px 20px;
   background-color: var(--color-dark-translucent);
   opacity: 0;
   transition: opacity var(--animation-duration);
-
-  &::before,
-  &::after {
-    position: absolute;
-    top: 20px;
-    display: block;
-    padding: 2px 5px;
-    font-size: 12px;
-    background-color: var(--color-gray);
-    border-radius: 5px;
-  }
-
-  .work--training & {
-    &::before {
-      content: "training project";
-      left: 20px;
-    }
-  }
-
-  @each $type, $bgColor in ("fixed": null, "adaptive": "--color-secondary", "responsive": "--color-tertiary") {
-    .work--#{$type} & {
-      &::after {
-        content: $type;
-        right: 20px;
-        background-color: if($bgColor, var(#{$bgColor}), null);
-      }
-    }
-  }
-}
-
-.work__info {
-  margin-bottom: 20px;
 }
 
 .work__title {
@@ -93,17 +61,37 @@
   text-align: center;
 }
 
+.work__text {
+  margin-top: 10px;
+  margin-bottom: 0;
+  padding-top: 10px;
+  font-size: 12px;
+  border-top: 1px solid var(--color-primary-2);
+}
+
+.work__tags {
+  @include list-reset();
+
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  left: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
 .work__links {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 5px;
-  padding-top: 20px;
+  margin-top: 10px;
+  padding-top: 10px;
   border-top: 1px solid var(--color-primary-2);
 
   .button {
-    color: inherit;
-
     &:hover,
     &:focus {
       color: inherit;

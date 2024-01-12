@@ -44,7 +44,7 @@
     "webpack-stream": "^7.0.0"
   },
   "engines": {
-    "node": "^16 || ^18"
+    "node": "^18 || ^20"
   },
   "browserslist": [
     "last 2 versions",

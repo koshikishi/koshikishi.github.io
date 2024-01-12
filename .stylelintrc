@@ -1,40 +1,42 @@
 {
   "extends": "stylelint-config-standard-scss",
   "rules": {
-    "alpha-value-notation": "number",
+    "no-descending-specificity": null,
 
-    "color-function-notation": null,
-    "color-hex-length": "long",
+    "color-hex-alpha": "never",
     "color-named": "never",
+
+    "declaration-no-important": true,
 
     "length-zero-no-unit": [true, {
       "ignore": ["custom-properties"],
       "ignoreFunctions": ["var", "/^--/"]
     }],
 
-    "font-family-name-quotes": "always-unless-keyword",
-
-    "number-max-precision": 2,
-
     "value-keyword-case": ["lower", {
       "camelCaseSvgKeywords": true
     }],
 
-    "declaration-no-important": true,
-
-    "selector-class-pattern": null,
-    "selector-id-pattern": null,
+    "max-nesting-depth": [2, {
+      "ignore": ["blockless-at-rules", "pseudo-classes"]
+    }],
+    "number-max-precision": 2,
     "selector-max-id": 0,
     "selector-max-universal": 2,
+
+    "alpha-value-notation": "number",
+    "color-function-notation": null,
+    "color-hex-length": "long",
+    "font-weight-notation": ["numeric", {
+      "ignore": ["relative"]
+    }],
+    "media-feature-range-notation": "prefix",
     "selector-not-notation": "simple",
 
-    "at-rule-empty-line-before": ["always", {
-      "except": ["blockless-after-same-name-blockless", "first-nested"],
-      "ignore": ["after-comment"],
-      "ignoreAtRules": ["else"]
-    }],
+    "selector-class-pattern": "^[a-z0-9-_]+$",
+    "selector-id-pattern": null,
 
-    "no-descending-specificity": null,
+    "font-family-name-quotes": "always-unless-keyword",
 
     "scss/at-each-key-value-single-line": true,
 
@@ -56,8 +58,7 @@
 
     "scss/no-duplicate-dollar-variables": [true, {
       "ignoreInside": ["at-rule"],
-      "ignoreInsideAtRules": ["if", "each", "for", "mixin", "function"],
-      "ignoreDefaults": true
+      "ignoreInsideAtRules": ["mixin", "function", "if", "each", "for", "while"]
     }]
   }
 }

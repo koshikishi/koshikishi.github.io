@@ -11,7 +11,7 @@ import cssnano from 'cssnano';
 import rename from 'gulp-rename';
 import htmlmin from 'gulp-html-minifier-terser';
 import webpack from 'webpack-stream';
-import webpackConfig from './webpack.config.mjs';
+import webpackConfig from './webpack.config.js';
 import sharp from 'gulp-sharp-optimize-images';
 import svgmin from 'gulp-svgmin';
 import {deleteAsync} from 'del';

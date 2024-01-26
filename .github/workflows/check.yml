@@ -5,7 +5,8 @@ on:
     branches:
       - main
   pull_request:
-    branches: '*'
+    branches:
+      - '*'
 
 jobs:
   check:
@@ -13,17 +14,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@main
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@main
+        uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version-file: 'package.json'
+
+      - name: Restore cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: cache-npm-${{ hashFiles('./package-lock.json') }}
+          restore-keys: cache-npm-
 
       - name: Install dependencies
-        run: |
-          npm install
+        run: npm ci
 
       - name: Run checks
-        run: |
-          npm test
+        run: npm test

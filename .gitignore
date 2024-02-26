@@ -1,5 +1,7 @@
-node_modules
-build
+node_modules/
+build/
+src/.raw/**/*.*
+!src/.raw/**/.gitkeep
 *.log
 .idea
 *.sublime*

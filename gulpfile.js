@@ -27,9 +27,12 @@ const Path = {
     STYLES: 'src/scss',
     SCRIPTS: 'src/js',
     IMAGES: 'src/img',
-    ICONS: 'src/icons',
     FAVICONS: 'src/favicons',
     FONTS: 'src/fonts',
+  },
+  Raw: {
+    ROOT: 'src/.raw',
+    IMAGES: 'src/.raw/img',
   },
   Build: {
     ROOT: 'build',
@@ -91,81 +94,65 @@ export const scripts = () => {
 };
 
 // Compressing raster image files with generation of *.webp and *.avif format
-export const optimizeImages = () => src([
-  `${Path.Source.IMAGES}/**/*.{png,jpg}`,
-  `!${Path.Source.FAVICONS}/**`,
-])
-  .pipe(sharp({
-    formats: [{
-      width: ({width}) => width,
-      format: 'webp',
-      webpOptions: {
-        quality: 80,
-      },
-    }, {
-      width: ({width}) => width,
-      format: 'avif',
-      avifOptions: {
-        quality: 65,
-      },
-    }],
-  }))
-  .pipe(dest(Path.Build.IMAGES))
-  .pipe(src(`${Path.Source.IMAGES}/**/*.{png,jpg}`))
-  .pipe(sharp({
-    formats: [{
-      width: ({width}) => width,
-      jpegOptions: {
-        quality: 80,
-        progressive: true,
-        mozjpeg: true,
-      },
-      pngOptions: {
-        compressionLevel: 9,
-        adaptiveFiltering: true,
-      },
-    }],
-  }))
-  .pipe(dest(Path.Build.IMAGES));
+export const optimizeImages = () => {
+  const RAW_DENSITY = 2;
+  const TARGET_FORMATS = [undefined, 'webp', 'avif'];
+
+  const createFormatOptions = () => {
+    const formats = [];
+
+    for (let density = RAW_DENSITY; density > 0; density--) {
+      formats.push(...TARGET_FORMATS.map((format) => ({
+        width: ({width}) => Math.ceil(width * density / RAW_DENSITY),
+        format,
+        rename: {
+          suffix: `@${density}x`,
+        },
+        jpegOptions: {
+          quality: 80,
+          progressive: true,
+          mozjpeg: true,
+        },
+        pngOptions: {
+          compressionLevel: 9,
+          adaptiveFiltering: true,
+        },
+        webpOptions: {
+          quality: 80,
+        },
+        avifOptions: {
+          quality: 65,
+        },
+      })));
+    }
+
+    return {formats};
+  };
+
+  return src(`${Path.Raw.IMAGES}/**/*.{png,jpg,jpeg}`)
+    .pipe(sharp(createFormatOptions()))
+    .pipe(dest(Path.Source.IMAGES));
+};
 
 // Compressing vector image *.svg files
-export const optimizeSvg = () => src([
-  `${Path.Source.IMAGES}/**/*.svg`,
-  `!${Path.Source.ICONS}/**`,
-])
+export const optimizeSvg = () => src(`${Path.Raw.ROOT}/**/*.svg`)
   .pipe(svgmin({
+    full: true,
     multipass: true,
-  }))
-  .pipe(dest(Path.Build.IMAGES));
-
-// Copying image files
-export const copyImages = () => src([
-  `${Path.Source.IMAGES}/**/*.{png,jpg,svg}`,
-  `!${Path.Source.ICONS}/**`,
-])
-  .pipe(dest(Path.Build.IMAGES));
-
-// Fast generation of image files in *.webp and *.avif format
-export const fastImages = () => src([
-  `${Path.Source.IMAGES}/**/*.{png,jpg}`,
-  `!${Path.Source.FAVICONS}/**`,
-])
-  .pipe(sharp({
-    formats: [{
-      width: ({width}) => width,
-      format: 'webp',
-      webpOptions: {
-        effort: 0,
+    plugins: [
+      {
+        name: 'preset-default',
+        params: {
+          overrides: {
+            removeViewBox: false,
+          },
+        },
       },
-    }, {
-      width: ({width}) => width,
-      format: 'avif',
-      avifOptions: {
-        effort: 0,
-      },
-    }],
+      'removeDimensions',
+      'removeRasterImages',
+    ],
   }))
-  .pipe(dest(Path.Build.IMAGES));
+  .pipe(dest(Path.Source.ROOT));
 
 // Deleting files in the build directory before copying
 export const clean = (done) => {
@@ -179,6 +166,8 @@ export const clean = (done) => {
 // Copying files to the build directory
 export const copy = (done) => {
   src([
+    `${Path.Source.IMAGES}/**/*`,
+    `${Path.Source.FAVICONS}/**/*.{png,svg}`,
     `${Path.Source.FONTS}/**/*.{woff,woff2}`,
     `${Path.Source.ROOT}/*.ico`,
     `${Path.Source.ROOT}/*.webmanifest`,
@@ -221,8 +210,6 @@ export const build = series(
     styles,
     html,
     scripts,
-    optimizeImages,
-    optimizeSvg,
   ),
 );
 
@@ -234,9 +221,6 @@ export const dev = series(
     styles,
     html,
     scripts,
-    optimizeSvg,
-    copyImages,
-    fastImages,
   ),
   server,
   watcher,

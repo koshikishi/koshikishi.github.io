@@ -70,7 +70,7 @@
 }
 
 .work__tags {
-  @include list-reset();
+  @include list-reset;
 
   position: absolute;
   top: 20px;

@@ -59,7 +59,7 @@
 }
 
 .about__list {
-  @include list-reset();
+  @include list-reset;
 
   display: flex;
   flex-wrap: wrap;

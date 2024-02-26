@@ -1,5 +1,5 @@
 // Hides an element from the viewport and remove it from the workflow
-@mixin visually-hidden() {
+@mixin visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -13,7 +13,7 @@
 }
 
 // Resets default browser styles for <ul> and <ol> lists
-@mixin list-reset() {
+@mixin list-reset {
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;

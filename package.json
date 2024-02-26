@@ -2,17 +2,25 @@
   "name": "webdevden",
   "version": "1.7.0",
   "homepage": "https://koshikishi.github.io/",
+  "bugs": {
+    "url": "https://github.com/koshikishi/koshikishi.github.io/issues"
+  },
   "license": "MIT",
+  "author": "Anton Northern",
   "type": "module",
   "repository": "github:koshikishi/koshikishi.github.io",
   "scripts": {
     "start": "gulp start",
     "build": "gulp build",
-    "editorconfig": "ec -exclude vendor",
-    "linthtml": "linthtml src/*.html",
-    "eslint": "eslint src/js/",
-    "stylelint": "stylelint src/scss/**/*.scss",
-    "test": "npm run editorconfig && npm run linthtml && npm run eslint && npm run stylelint"
+    "preview": "npm run build && browser-sync build --cors --no-notify --no-ui",
+    "lint": "run-p -c lint:**",
+    "lint:spaces": "ec -exclude vendor",
+    "lint:html": "linthtml src/**/*.html",
+    "lint:styles": "stylelint src/scss/**/*.scss",
+    "lint:scripts": "eslint src/js/ --ignore-pattern **/vendor",
+    "optimize": "run-p optimize:**",
+    "optimize:raster": "gulp raster",
+    "optimize:vector": "gulp vector"
   },
   "devDependencies": {
     "@koshikishi/eslint-config": "^2.0.0",
@@ -34,6 +42,7 @@
     "gulp-sass": "^5.1.0",
     "gulp-sharp-responsive": "^0.4.1",
     "gulp-svgmin": "^4.1.0",
+    "npm-run-all2": "^6.1.2",
     "postcss": "^8.4.35",
     "postcss-normalize": "^10.0.1",
     "postcss-preset-env": "^9.4.0",

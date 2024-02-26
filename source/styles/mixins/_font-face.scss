@@ -9,7 +9,7 @@
 /// @param {number} $font-weight - a value of the font-weight property (numeric only)
 /// @param {string} $font-style - a value of the font-style property
 /// @param {bool} $is-spaceless - true if the font name should be stripped of whitespaces (eg: "Roboto-Bold"); otherwise, false to preserve whitespaces (eg: "Roboto Bold")
-/// @return {string} - a name of the locally-installed font
+/// @return {string} a name of the locally-installed font
 @function -get-local-font-name($font-family, $weight-name, $font-weight, $font-style, $is-spaceless) {
   $font-name: if($is-spaceless, to-spaceless($font-family), $font-family);
   $delimiter: if($is-spaceless, "-", " ");
@@ -34,7 +34,7 @@
 /// @param {number} $font-weight - a value of the font-weight property (numeric only)
 /// @param {string} $font-style - a value of the font-style property
 /// @param {list} $extensions - a list of available font file extensions; allowed extensions are eot, woff2, woff, otf, ttf, svg (the order of the values is mandatory)
-/// @return {list} - a comma-separated list of external references or locally-installed font face names
+/// @return {list} a comma-separated list of external references or locally-installed font face names
 @function -get-font-src($font-family, $weight-name, $font-weight, $font-style, $extensions) {
   $font-name: -get-local-font-name($font-family, $weight-name, $font-weight, $font-style, false);
   $font-name-spaceless: -get-local-font-name($font-family, $weight-name, $font-weight, $font-style, true);

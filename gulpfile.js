@@ -1,3 +1,4 @@
+import {rmSync} from 'node:fs';
 import gulp from 'gulp';
 import plumber from 'gulp-plumber';
 import sourcemaps from 'gulp-sourcemaps';
@@ -14,7 +15,6 @@ import webpack from 'webpack-stream';
 import webpackConfig from './webpack.config.js';
 import sharp from 'gulp-sharp-optimize-images';
 import svgmin from 'gulp-svgmin';
-import {deleteAsync} from 'del';
 import {create as bsCreate} from 'browser-sync';
 
 const {src, dest, watch, series, parallel} = gulp;
@@ -25,7 +25,7 @@ const Path = {
   Source: {
     ROOT: 'source',
     STYLES: 'source/styles',
-    JS: 'source/js',
+    SCRIPTS: 'source/js',
     IMAGES: 'source/images',
     ICONS: 'source/images/icons',
     FAVICONS: 'source/images/favicons',
@@ -34,7 +34,7 @@ const Path = {
   Build: {
     ROOT: 'build',
     STYLES: 'build/css',
-    JS: 'build/js',
+    SCRIPTS: 'build/js',
     IMAGES: 'build/images',
   },
 };
@@ -54,7 +54,6 @@ export const styles = () => src(`${Path.Source.STYLES}/style.scss`)
           method: 'copy',
         },
       },
-      enableClientSidePolyfills: false,
     }),
     autoprefixer(),
     cssnano(),
@@ -76,9 +75,9 @@ export const html = () => src(`${Path.Source.ROOT}/*.html`)
   .pipe(dest(Path.Build.ROOT));
 
 // Transpilation and minification of *.js script files
-export const scripts = () => src(`${Path.Source.JS}/main.js`)
+export const scripts = () => src(`${Path.Source.SCRIPTS}/main.js`)
   .pipe(webpack(webpackConfig))
-  .pipe(dest(Path.Build.JS));
+  .pipe(dest(Path.Build.SCRIPTS));
 
 // Compressing raster image files with generation of *.webp and *.avif format
 export const optimizeImages = () => src([
@@ -88,11 +87,9 @@ export const optimizeImages = () => src([
   .pipe(sharp({
     webp: {
       quality: 80,
-      effort: 6,
     },
     avif: {
       quality: 65,
-      effort: 9,
     },
   }))
   .pipe(dest(Path.Build.IMAGES))
@@ -100,7 +97,7 @@ export const optimizeImages = () => src([
   .pipe(sharp({
     png_to_png: {
       compressionLevel: 9,
-      effort: 10,
+      adaptiveFiltering: true,
     },
     jpg_to_jpg: {
       quality: 80,
@@ -143,7 +140,13 @@ export const fastImages = () => src([
   .pipe(dest(Path.Build.IMAGES));
 
 // Deleting files in the build directory before copying
-export const clean = () => deleteAsync(Path.Build.ROOT);
+export const clean = (done) => {
+  rmSync(Path.Build.ROOT, {
+    force: true,
+    recursive: true,
+  });
+  done();
+};
 
 // Copying files to the build directory
 export const copy = (done) => {
@@ -178,7 +181,7 @@ export const server = (done) => {
 // Watching changes in project files
 export const watcher = () => {
   watch(`${Path.Source.STYLES}/**/*.scss`, styles);
-  watch(`${Path.Source.JS}/**/*.js`, scripts);
+  watch(`${Path.Source.SCRIPTS}/**/*.js`, scripts);
   watch(`${Path.Source.ROOT}/*.html`, series(html, refresh));
 };
 

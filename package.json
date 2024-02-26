@@ -7,9 +7,9 @@
   "repository": "github:koshikishi/koshikishi.github.io",
   "scripts": {
     "editorconfig": "editorconfig-cli",
-    "linthtml": "linthtml source/*.html",
-    "eslint": "eslint source/js/",
-    "stylelint": "stylelint source/styles/**/*.scss",
+    "linthtml": "linthtml src/*.html",
+    "eslint": "eslint src/js/",
+    "stylelint": "stylelint src/scss/**/*.scss",
     "test": "npm run editorconfig && npm run linthtml && npm run eslint && npm run stylelint",
     "build": "cross-env NODE_ENV=production gulp build",
     "start": "cross-env NODE_ENV=development gulp"
@@ -59,9 +59,9 @@
   "editorconfig-cli": [
     "*.json",
     "*.js",
-    "source/*.html",
-    "source/js/**/*.js",
-    "source/images/**/*.svg",
-    "source/styles/**/*.scss"
+    "src/*.html",
+    "src/js/**/*.js",
+    "src/img/**/*.svg",
+    "src/scss/**/*.scss"
   ]
 }

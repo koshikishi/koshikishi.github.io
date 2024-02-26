@@ -23,19 +23,19 @@ const browserSync = bsCreate();
 // Paths to files
 const Path = {
   Source: {
-    ROOT: 'source',
-    STYLES: 'source/styles',
-    SCRIPTS: 'source/js',
-    IMAGES: 'source/images',
-    ICONS: 'source/images/icons',
-    FAVICONS: 'source/images/favicons',
-    FONTS: 'source/fonts',
+    ROOT: 'src',
+    STYLES: 'src/scss',
+    SCRIPTS: 'src/js',
+    IMAGES: 'src/img',
+    ICONS: 'src/icons',
+    FAVICONS: 'src/favicons',
+    FONTS: 'src/fonts',
   },
   Build: {
     ROOT: 'build',
     STYLES: 'build/css',
     SCRIPTS: 'build/js',
-    IMAGES: 'build/images',
+    IMAGES: 'build/img',
   },
 };
 

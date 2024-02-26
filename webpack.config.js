@@ -6,7 +6,7 @@ const __dirname = path.dirname(__filename);
 
 const config = {
   mode: (process.env.NODE_ENV === 'production') ? 'production' : 'development',
-  entry: './source/js/main.js',
+  entry: './src/js/main.js',
   output: {
     path: path.resolve(__dirname, 'build/js'),
     filename: '[name].min.js',

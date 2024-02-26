@@ -15,20 +15,19 @@
     "start": "cross-env NODE_ENV=development gulp"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.9",
-    "@babel/preset-env": "^7.23.9",
     "@htmlacademy/editorconfig-cli": "^3.0.0",
     "@koshikishi/eslint-config": "^2.0.0",
     "@koshikishi/linthtml-config": "^1.0.1",
     "@koshikishi/stylelint-config": "^3.0.0",
     "@linthtml/linthtml": "^0.9.5",
     "autoprefixer": "^10.4.17",
-    "babel-loader": "^9.1.3",
     "browser-sync": "^3.0.2",
+    "browserslist-to-esbuild": "^2.1.1",
     "cross-env": "^7.0.3",
     "cssnano": "^6.0.5",
     "eslint": "^8.57.0",
     "gulp": "^4.0.2",
+    "gulp-esbuild": "^0.12.0",
     "gulp-html-minifier-terser": "^7.1.0",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^10.0.0",
@@ -41,9 +40,7 @@
     "postcss-normalize": "^10.0.1",
     "postcss-preset-env": "^9.4.0",
     "sass": "^1.71.1",
-    "stylelint": "^16.2.1",
-    "webpack": "^5.90.3",
-    "webpack-stream": "^7.0.0"
+    "stylelint": "^16.2.1"
   },
   "engines": {
     "node": "^18 || ^20"

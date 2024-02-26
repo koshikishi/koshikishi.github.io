@@ -11,8 +11,8 @@ import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 import rename from 'gulp-rename';
 import htmlmin from 'gulp-html-minifier-terser';
-import webpack from 'webpack-stream';
-import webpackConfig from './webpack.config.js';
+import {createGulpEsbuild} from 'gulp-esbuild';
+import browserslistToEsbuild from 'browserslist-to-esbuild';
 import sharp from 'gulp-sharp-optimize-images';
 import svgmin from 'gulp-svgmin';
 import {create as bsCreate} from 'browser-sync';
@@ -75,9 +75,20 @@ export const html = () => src(`${Path.Source.ROOT}/*.html`)
   .pipe(dest(Path.Build.ROOT));
 
 // Transpilation and minification of *.js script files
-export const scripts = () => src(`${Path.Source.SCRIPTS}/main.js`)
-  .pipe(webpack(webpackConfig))
-  .pipe(dest(Path.Build.SCRIPTS));
+export const scripts = () => {
+  const esbuild = createGulpEsbuild({incremental: false});
+
+  return src(`${Path.Source.SCRIPTS}/main.js`)
+    .pipe(esbuild({
+      bundle: true,
+      format: 'esm',
+      outfile: 'main.min.js',
+      target: browserslistToEsbuild(),
+      minify: true,
+      sourcemap: true,
+    }))
+    .pipe(dest(Path.Build.SCRIPTS));
+};
 
 // Compressing raster image files with generation of *.webp and *.avif format
 export const optimizeImages = () => src([

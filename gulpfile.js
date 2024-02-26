@@ -13,7 +13,7 @@ import rename from 'gulp-rename';
 import htmlmin from 'gulp-html-minifier-terser';
 import {createGulpEsbuild} from 'gulp-esbuild';
 import browserslistToEsbuild from 'browserslist-to-esbuild';
-import sharp from 'gulp-sharp-optimize-images';
+import sharp from 'gulp-sharp-responsive';
 import svgmin from 'gulp-svgmin';
 import {create as bsCreate} from 'browser-sync';
 
@@ -96,25 +96,35 @@ export const optimizeImages = () => src([
   `!${Path.Source.FAVICONS}/**`,
 ])
   .pipe(sharp({
-    webp: {
-      quality: 80,
-    },
-    avif: {
-      quality: 65,
-    },
+    formats: [{
+      width: ({width}) => width,
+      format: 'webp',
+      webpOptions: {
+        quality: 80,
+      },
+    }, {
+      width: ({width}) => width,
+      format: 'avif',
+      avifOptions: {
+        quality: 65,
+      },
+    }],
   }))
   .pipe(dest(Path.Build.IMAGES))
   .pipe(src(`${Path.Source.IMAGES}/**/*.{png,jpg}`))
   .pipe(sharp({
-    png_to_png: {
-      compressionLevel: 9,
-      adaptiveFiltering: true,
-    },
-    jpg_to_jpg: {
-      quality: 80,
-      progressive: true,
-      mozjpeg: true,
-    },
+    formats: [{
+      width: ({width}) => width,
+      jpegOptions: {
+        quality: 80,
+        progressive: true,
+        mozjpeg: true,
+      },
+      pngOptions: {
+        compressionLevel: 9,
+        adaptiveFiltering: true,
+      },
+    }],
   }))
   .pipe(dest(Path.Build.IMAGES));
 
@@ -141,12 +151,19 @@ export const fastImages = () => src([
   `!${Path.Source.FAVICONS}/**`,
 ])
   .pipe(sharp({
-    webp: {
-      effort: 0,
-    },
-    avif: {
-      effort: 0,
-    },
+    formats: [{
+      width: ({width}) => width,
+      format: 'webp',
+      webpOptions: {
+        effort: 0,
+      },
+    }, {
+      width: ({width}) => width,
+      format: 'avif',
+      avifOptions: {
+        effort: 0,
+      },
+    }],
   }))
   .pipe(dest(Path.Build.IMAGES));
 

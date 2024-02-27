@@ -1,0 +1,11 @@
+@font-face {
+  font-style: normal;
+  font-weight: 500;
+  font-family: "Fira Mono";
+  font-display: swap;
+  src:
+    local("Fira Mono Medium"),
+    local("FiraMono-Medium"),
+    url("../fonts/firamono-500.woff2") format("woff2"),
+    url("../fonts/firamono-500.woff") format("woff");
+}

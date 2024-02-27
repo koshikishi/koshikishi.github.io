@@ -1,17 +1,16 @@
-.visually-hidden:not(:focus):not(:active) {
-  @include visually-hidden;
-}
+@use "variables" as *;
+@use "../mixins/media" as *;
 
 .container {
   box-sizing: border-box;
-  min-width: $width-mobile;
+  min-width: $viewport-mobile;
   max-width: 620px; // 20 + (280 * 2 + 20) + 20
   margin-right: auto;
   margin-left: auto;
   padding-right: 20px;
   padding-left: 20px;
 
-  @media (min-width: $width-tablet) {
+  @include media-min-tablet {
     max-width: 1137px; // 30 + (339 * 3 + 30 * 2) + 30
     padding-right: 30px;
     padding-left: 30px;

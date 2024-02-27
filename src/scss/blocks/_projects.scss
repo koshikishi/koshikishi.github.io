@@ -1,9 +1,11 @@
+@use "../mixins/media" as *;
+
 .projects {
   padding-top: 25px;
   padding-bottom: 20px;
   border-bottom: 1px solid var(--color-gray);
 
-  @media (min-width: $width-tablet) {
+  @include media-min-tablet {
     padding-top: 35px;
     padding-bottom: 35px;
   }
@@ -20,7 +22,7 @@
   justify-content: center;
   gap: 20px;
 
-  @media (min-width: $width-tablet) {
+  @include media-min-tablet {
     grid-template-columns: repeat(auto-fill, 339px);
     gap: 30px;
   }
@@ -31,7 +33,7 @@
   justify-content: center;
   margin-top: 20px;
 
-  @media (min-width: $width-tablet) {
+  @include media-min-tablet {
     margin-top: 30px;
   }
 }

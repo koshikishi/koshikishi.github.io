@@ -1,4 +1,12 @@
+// Fonts
+$font-primary: "Fira Mono", "Courier New", monospace;
+
+// Viewports
+$viewport-mobile: 320px;
+$viewport-tablet: 768px;
+
 :root {
+  // Colors
   --color-white: #ffffff;
   --color-dark: #272727;
   --color-gray: #747474;
@@ -8,7 +16,6 @@
   --color-primary-1: #33d997;
   --color-primary-2: #00ff99;
   --color-secondary: #ff652f;
-  --animation-duration: 0.3s;
 
   color-scheme: light dark;
 
@@ -16,29 +23,7 @@
     --color-bg: var(--color-dark);
     --color-fg: var(--color-white);
   }
-}
 
-html {
-  min-height: 100vh;
-  scroll-behavior: smooth;
-  font: 500 14px $font-primary;
-}
-
-body {
-  min-width: $width-mobile;
-  margin: 0;
-  color: var(--color-fg);
-  text-size-adjust: 100%;
-  background-color: var(--color-bg);
-  -webkit-tap-highlight-color: transparent;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
+  // Animation
+  --animation-duration: 0.3s;
 }

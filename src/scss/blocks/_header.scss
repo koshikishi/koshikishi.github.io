@@ -1,3 +1,5 @@
+@use "../mixins/media" as *;
+
 .header {
   position: sticky;
   top: 0;
@@ -9,7 +11,7 @@
     position: initial;
   }
 
-  @media (min-width: $width-tablet) {
+  @include media-min-tablet {
     min-height: 60px;
     padding-top: 19px;
     padding-bottom: 19px;
@@ -18,13 +20,13 @@
 }
 
 .header__wrapper {
-  @media (max-width: $width-tablet - 1) {
+  @include media-max-tablet {
     max-width: none;
     padding-right: 0;
     padding-left: 0;
   }
 
-  @media (min-width: $width-tablet) {
+  @include media-min-tablet {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -32,7 +34,7 @@
 }
 
 .header__inner {
-  @media (max-width: $width-tablet - 1) {
+  @include media-max-tablet {
     display: grid;
     grid-template-columns: minmax(20px, 1fr) minmax(auto, 620px - 20px * 2) minmax(20px, 1fr);
     align-items: center;
@@ -50,7 +52,7 @@
 }
 
 .header__logo {
-  @media (max-width: $width-tablet - 1) {
+  @include media-max-tablet {
     grid-row-start: 1;
   }
 }
@@ -80,7 +82,7 @@
 
     @for $i from 1 through 3 {
       &:nth-child(#{$i}) {
-        top: #{($i - 1) * 10 + 4}px;
+        top: (($i - 1) * 10 + 4) * 1px;
       }
     }
   }
@@ -113,12 +115,12 @@
     opacity: 0.6;
   }
 
-  @media (max-width: $width-tablet - 1) {
+  @include media-max-tablet {
     grid-row-start: 1;
     justify-self: end;
   }
 
-  @media (min-width: $width-tablet) {
+  @include media-min-tablet {
     display: none;
   }
 }

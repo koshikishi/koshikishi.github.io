@@ -1,29 +1,29 @@
-// Global
-@import "variables";
-@import "functions";
-@import "mixins";
-@import "fonts";
-@import "vendor";
-@import "global";
-@import "helpers";
-@import "animations";
+// Vendor
+@use "vendor/normalize";
 
-// Page styles
-@import "blocks/page";
-@import "blocks/logo";
-@import "blocks/title";
-@import "blocks/button";
+// Common
+@use "common/variables";
+@use "common/fonts";
+@use "common/keyframes";
+@use "common/global";
+@use "common/layout";
+@use "common/utils";
+
+// Page
+@use "blocks/logo";
+@use "blocks/title";
+@use "blocks/button";
 
 // Header
-@import "blocks/header";
-@import "blocks/main-menu";
+@use "blocks/header";
+@use "blocks/main-menu";
 
-// Content blocks
-@import "blocks/about";
-@import "blocks/tag";
-@import "blocks/projects";
-@import "blocks/work";
+// Content
+@use "blocks/about";
+@use "blocks/tag";
+@use "blocks/projects";
+@use "blocks/work";
 
 // Footer
-@import "blocks/footer";
-@import "blocks/contacts";
+@use "blocks/footer";
+@use "blocks/contacts";

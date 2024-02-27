@@ -1,8 +1,10 @@
+@use "../mixins/media" as *;
+
 .footer {
   padding-top: 25px;
   padding-bottom: 25px;
 
-  @media (min-width: $width-tablet) {
+  @include media-min-tablet {
     padding-top: 35px;
     padding-bottom: 35px;
   }

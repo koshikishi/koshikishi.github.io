@@ -1,0 +1,23 @@
+/// Resets default browser styles for <ol> and <ul> lists.
+/// @output a declaration block to reset default list styles.
+@mixin list-reset {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+/// Visually hides an element but keeps it accessible to assistive technologies.
+/// @output a declaration block to visually hide an element.
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+}

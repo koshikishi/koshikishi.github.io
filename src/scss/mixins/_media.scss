@@ -1,0 +1,41 @@
+@use "../common/variables" as *;
+
+/// Creates a @media at-rule to apply styles for viewports with a width greater than or equal to the tablet.
+/// @output a @media at-rule that targets tablet and desktop viewports.
+@mixin media-min-tablet {
+  @media (width >= $viewport-tablet) {
+    @content;
+  }
+}
+
+/// Creates a @media at-rule to apply styles for viewports with a width greater than or equal to the desktop.
+/// @output a @media at-rule that targets desktop viewports.
+@mixin media-min-desktop {
+  @media (width >= $viewport-desktop) {
+    @content;
+  }
+}
+
+/// Creates a @media at-rule to apply styles for viewports with a width less than the tablet.
+/// @output a @media at-rule that targets mobile viewports.
+@mixin media-max-tablet {
+  @media (width < $viewport-tablet) {
+    @content;
+  }
+}
+
+/// Creates a @media at-rule to apply styles for viewports with a width less than the desktop.
+/// @output a @media at-rule that targets mobile and tablet viewports.
+@mixin media-max-desktop {
+  @media (width < $viewport-desktop) {
+    @content;
+  }
+}
+
+/// Creates a @media at-rule to apply styles for viewports with a width ranging from tablet to desktop.
+/// @output a @media at-rule that targets tablet viewports.
+@mixin media-tablet-desktop {
+  @media ($viewport-tablet <= width < $viewport-desktop) {
+    @content;
+  }
+}

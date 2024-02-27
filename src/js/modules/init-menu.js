@@ -1,8 +1,10 @@
-import {removeAnimationClass} from './utils.js';
+import {removeAnimationClass} from '../utils/animation';
 
 const ANIMATION_DURATION = 300;
-const MEDIA_QUERY = '(min-width: 768px)';
+const MEDIA_QUERY = '(width < 768px)';
 const ElementClass = {
+  HEADER: 'header',
+  HEADER_NOJS: 'header--nojs',
   MENU: 'main-menu',
   MENU_OPENED: 'main-menu--opened',
   TOGGLE: 'header__toggle',
@@ -13,14 +15,14 @@ const ToggleText = {
   CLOSED: 'Open menu',
 };
 
+const header = document.querySelector(`.${ElementClass.HEADER}`);
 const menu = document.querySelector(`.${ElementClass.MENU}`);
 const menuToggle = document.querySelector(`.${ElementClass.TOGGLE}`);
 const mediaQueryList = window.matchMedia(MEDIA_QUERY);
 
 /**
- * Toggles a menu to the opened/closed state depending on the passed argument
- *
- * @param {boolean} [doOpen] - true if the menu should be closed, or false if it should be opened; if no argument was passed, then the menu will change its state to the opposite
+ * Toggles the menu to the opened/closed state depending on the passed argument.
+ * @param {boolean} [doOpen] - true to open the menu, or false to close it. If no argument was passed, the menu will change its state to the opposite.
  */
 const toggleMenu = (doOpen = !menu.classList.contains(ElementClass.MENU_OPENED)) => {
   if (doOpen === menu.classList.contains(ElementClass.MENU_OPENED)) {
@@ -43,37 +45,40 @@ const toggleMenu = (doOpen = !menu.classList.contains(ElementClass.MENU_OPENED))
 };
 
 /**
- * Handles mouse clicks in the menu
+ * Handles mouse clicks in the menu.
  */
 const onMenuClick = () => {
   toggleMenu();
 };
 
 /**
- * Adds event listeners to the menu if it is a mobile layout, and removes them otherwise
- *
- * @param {Event} evt - a change event object
+ * Adds event listeners to the menu for mobile viewports and removes them otherwise.
+ * @param {MediaQueryListEvent} evt - a change event object.
  */
-const onLayoutChange = function(evt) {
+const onViewportChange = (evt) => {
   if (evt.matches) {
+    menu.addEventListener('click', onMenuClick);
+    menuToggle.addEventListener('click', onMenuClick);
+  } else {
     toggleMenu(false);
 
     menu.removeEventListener('click', onMenuClick);
     menuToggle.removeEventListener('click', onMenuClick);
-  } else {
-    menu.addEventListener('click', onMenuClick);
-    menuToggle.addEventListener('click', onMenuClick);
   }
 };
 
 /**
- * Adds event listeners to the menu and MediaQueryList
+ * Initializes the menu for mobile viewports and watches for the viewport changes.
  */
-export default () => {
-  if (!mediaQueryList.matches) {
+const initMenu = () => {
+  header.classList.remove(ElementClass.HEADER_NOJS);
+
+  if (mediaQueryList.matches) {
     menu.addEventListener('click', onMenuClick);
     menuToggle.addEventListener('click', onMenuClick);
   }
 
-  mediaQueryList.addEventListener('change', onLayoutChange);
+  mediaQueryList.addEventListener('change', onViewportChange);
 };
+
+export {initMenu};

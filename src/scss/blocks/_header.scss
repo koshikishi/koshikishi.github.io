@@ -7,7 +7,7 @@
   box-sizing: border-box;
   background-color: var(--color-bg);
 
-  .no-js & {
+  &--nojs {
     position: initial;
   }
 
@@ -98,7 +98,7 @@
     }
   }
 
-  .no-js & {
+  .header--nojs & {
     display: none;
   }
 

@@ -1,3 +1,5 @@
-import initMenu from './menu.js';
+import {initMenu} from './modules/init-menu';
 
-initMenu();
+window.addEventListener('DOMContentLoaded', () => {
+  initMenu();
+});

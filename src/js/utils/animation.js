@@ -1,10 +1,9 @@
 const ANIMATION_DIRECTION = 'reverse';
 
 /**
- * Resets CSS-animation for an element
- *
- * @param {Element} element - an element to reset the animation for
- * @param {string} className - CSS-class that adds the animation
+ * Resets a CSS animation for an element.
+ * @param {HTMLElement} element - the element to reset the animation for.
+ * @param {string} className - the CSS class that adds the animation.
  */
 const resetCSSAnimation = (element, className) => {
   element.classList.remove(className);
@@ -13,11 +12,10 @@ const resetCSSAnimation = (element, className) => {
 };
 
 /**
- * Hides an element (removes a class with an animation showing the element, for example .shown)
- *
- * @param {Element} element - an element to be hidden (animated)
- * @param {string} className - CSS-class that adds the animation
- * @param {number} timer - an animation duration (ms)
+ * Hides an element (removes a class with an animation showing the element, e.g. .shown).
+ * @param {HTMLElement} element - the element to be hidden (animated).
+ * @param {string} className - the CSS class that adds the animation.
+ * @param {number} timer - the animation duration (ms).
  */
 const removeAnimationClass = (element, className, timer) => {
   resetCSSAnimation(element, className);

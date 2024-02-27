@@ -15,7 +15,7 @@
     animation: var(--animation-duration) both menu-open;
   }
 
-  .no-js & {
+  .header--nojs & {
     display: block;
     animation: none;
   }

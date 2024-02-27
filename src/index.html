@@ -2,28 +2,29 @@
 <html class="no-js" lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Web Developer's Den | Front-end developer portfolio website</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="The portfolio website of an actively progressing front-end developer from Russia">
     <meta name="theme-color" content="#272727">
-    <link rel="preload" href="fonts/firamono-500.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <title>Web Developer's Den | Front-end developer portfolio website</title>
+    <link rel="preload" href="fonts/firamono-500.woff2" as="font" crossorigin>
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="icon" href="favicon.ico">
     <link rel="icon" href="favicons/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="favicons/apple-touch-icon.png">
     <link rel="manifest" href="manifest.webmanifest">
-  </head>
-  <body class="page">
     <script>
       (() => {
         document.documentElement.classList.remove('no-js');
       })();
     </script>
+    <script src="js/main.min.js" defer></script>
+  </head>
+  <body class="page">
     <header class="header">
       <div class="header__wrapper container">
         <div class="header__inner">
           <div class="header__logo logo">
-            <img src="img/logo.svg" alt="WebDevDen website logo" width="171" height="20">
+            <img src="img/logo.svg" width="171" height="20" alt="WebDevDen website logo">
           </div>
           <button class="header__toggle" type="button" aria-expanded="false" aria-controls="main-menu" aria-label="Open menu">
             <span></span>
@@ -62,9 +63,9 @@
             <div class="about__author h-card vcard" itemprop="creator" itemscope itemtype="http://schema.org/Person" itemref="contacts">
               <div class="about__photo">
                 <picture>
-                  <source srcset="img/about-photo-tablet@1x.avif 1x, img/about-photo-tablet@2x.avif 2x" type="image/avif">
-                  <source srcset="img/about-photo-tablet@1x.webp 1x, img/about-photo-tablet@2x.webp 2x" type="image/webp">
-                  <img class="u-photo photo" src="img/about-photo-tablet@1x.jpg" srcset="img/about-photo-tablet@2x.jpg 2x" alt="Photo of the website author Anton Sevryukov" width="216" height="216" itemprop="image">
+                  <source type="image/avif" srcset="img/about-photo-tablet@1x.avif 1x, img/about-photo-tablet@2x.avif 2x">
+                  <source type="image/webp" srcset="img/about-photo-tablet@1x.webp 1x, img/about-photo-tablet@2x.webp 2x">
+                  <img class="u-photo photo" src="img/about-photo-tablet@1x.jpg" srcset="img/about-photo-tablet@2x.jpg 2x" width="216" height="216" alt="Photo of the website author Anton Sevryukov" itemprop="image">
                 </picture>
               </div>
               <p class="about__description">
@@ -177,12 +178,12 @@
             <article class="work" itemscope itemtype="https://schema.org/WebSite" itemref="about">
               <div class="work__image">
                 <picture>
-                  <source srcset="img/work-akvalink-tablet@1x.avif 1x, img/work-akvalink-tablet@2x.avif 2x" media="(min-width: 768px)" type="image/avif">
-                  <source srcset="img/work-akvalink-mobile@1x.avif 1x, img/work-akvalink-mobile@2x.avif 2x" type="image/avif">
-                  <source srcset="img/work-akvalink-tablet@1x.webp 1x, img/work-akvalink-tablet@2x.webp 2x" media="(min-width: 768px)" type="image/webp">
-                  <source srcset="img/work-akvalink-mobile@1x.webp 1x, img/work-akvalink-mobile@2x.webp 2x" type="image/webp">
-                  <source srcset="img/work-akvalink-tablet@1x.jpg 1x, img/work-akvalink-tablet@2x.jpg 2x" media="(min-width: 768px)" type="image/jpeg">
-                  <img src="img/work-akvalink-mobile@1x.jpg" srcset="img/work-akvalink-mobile@2x.jpg 2x" alt="Screenshot of the online service Akvalink" width="280" height="280" loading="lazy" itemprop="image">
+                  <source type="image/avif" media="(min-width: 768px)" srcset="img/work-akvalink-tablet@1x.avif 1x, img/work-akvalink-tablet@2x.avif 2x" width="339" height="255">
+                  <source type="image/webp" media="(min-width: 768px)" srcset="img/work-akvalink-tablet@1x.webp 1x, img/work-akvalink-tablet@2x.webp 2x" width="339" height="255">
+                  <source type="image/jpeg" media="(min-width: 768px)" srcset="img/work-akvalink-tablet@1x.jpg 1x, img/work-akvalink-tablet@2x.jpg 2x" width="339" height="255">
+                  <source type="image/avif" srcset="img/work-akvalink-mobile@1x.avif 1x, img/work-akvalink-mobile@2x.avif 2x">
+                  <source type="image/webp" srcset="img/work-akvalink-mobile@1x.webp 1x, img/work-akvalink-mobile@2x.webp 2x">
+                  <img src="img/work-akvalink-mobile@1x.jpg" srcset="img/work-akvalink-mobile@2x.jpg 2x" width="280" height="280" alt="Screenshot of the online service Akvalink" loading="lazy" itemprop="image">
                 </picture>
               </div>
               <div class="work__content">
@@ -207,12 +208,12 @@
             <article class="work" itemscope itemtype="https://schema.org/WebSite" itemref="about">
               <div class="work__image">
                 <picture>
-                  <source srcset="img/work-nephromed-tablet@1x.avif 1x, img/work-nephromed-tablet@2x.avif 2x" media="(min-width: 768px)" type="image/avif">
-                  <source srcset="img/work-nephromed-mobile@1x.avif 1x, img/work-nephromed-mobile@2x.avif 2x" type="image/avif">
-                  <source srcset="img/work-nephromed-tablet@1x.webp 1x, img/work-nephromed-tablet@2x.webp 2x" media="(min-width: 768px)" type="image/webp">
-                  <source srcset="img/work-nephromed-mobile@1x.webp 1x, img/work-nephromed-mobile@2x.webp 2x" type="image/webp">
-                  <source srcset="img/work-nephromed-tablet@1x.jpg 1x, img/work-nephromed-tablet@2x.jpg 2x" media="(min-width: 768px)" type="image/jpeg">
-                  <img src="img/work-nephromed-mobile@1x.jpg" srcset="img/work-nephromed-mobile@2x.jpg 2x" alt="Screenshot of the NephroMed dialysis center website" width="280" height="280" loading="lazy" itemprop="image">
+                  <source type="image/avif" media="(min-width: 768px)" srcset="img/work-nephromed-tablet@1x.avif 1x, img/work-nephromed-tablet@2x.avif 2x" width="339" height="255">
+                  <source type="image/webp" media="(min-width: 768px)" srcset="img/work-nephromed-tablet@1x.webp 1x, img/work-nephromed-tablet@2x.webp 2x" width="339" height="255">
+                  <source type="image/jpeg" media="(min-width: 768px)" srcset="img/work-nephromed-tablet@1x.jpg 1x, img/work-nephromed-tablet@2x.jpg 2x" width="339" height="255">
+                  <source type="image/avif" srcset="img/work-nephromed-mobile@1x.avif 1x, img/work-nephromed-mobile@2x.avif 2x">
+                  <source type="image/webp" srcset="img/work-nephromed-mobile@1x.webp 1x, img/work-nephromed-mobile@2x.webp 2x">
+                  <img src="img/work-nephromed-mobile@1x.jpg" srcset="img/work-nephromed-mobile@2x.jpg 2x" width="280" height="280" alt="Screenshot of the NephroMed dialysis center website" loading="lazy" itemprop="image">
                 </picture>
               </div>
               <div class="work__content">
@@ -240,12 +241,12 @@
             <article class="work" itemscope itemtype="https://schema.org/WebSite" itemref="about">
               <div class="work__image">
                 <picture>
-                  <source srcset="img/work-gkod-tablet@1x.avif 1x, img/work-gkod-tablet@2x.avif 2x" media="(min-width: 768px)" type="image/avif">
-                  <source srcset="img/work-gkod-mobile@1x.avif 1x, img/work-gkod-mobile@2x.avif 2x" type="image/avif">
-                  <source srcset="img/work-gkod-tablet@1x.webp 1x, img/work-gkod-tablet@2x.webp 2x" media="(min-width: 768px)" type="image/webp">
-                  <source srcset="img/work-gkod-mobile@1x.webp 1x, img/work-gkod-mobile@2x.webp 2x" type="image/webp">
-                  <source srcset="img/work-gkod-tablet@1x.jpg 1x, img/work-gkod-tablet@2x.jpg 2x" media="(min-width: 768px)" type="image/jpeg">
-                  <img src="img/work-gkod-mobile@1x.jpg" srcset="img/work-gkod-mobile@2x.jpg 2x" alt="Screenshot of the clinical oncology center website" width="280" height="280" loading="lazy" itemprop="image">
+                  <source type="image/avif" media="(min-width: 768px)" srcset="img/work-gkod-tablet@1x.avif 1x, img/work-gkod-tablet@2x.avif 2x" width="339" height="255">
+                  <source type="image/webp" media="(min-width: 768px)" srcset="img/work-gkod-tablet@1x.webp 1x, img/work-gkod-tablet@2x.webp 2x" width="339" height="255">
+                  <source type="image/jpeg" media="(min-width: 768px)" srcset="img/work-gkod-tablet@1x.jpg 1x, img/work-gkod-tablet@2x.jpg 2x" width="339" height="255">
+                  <source type="image/avif" srcset="img/work-gkod-mobile@1x.avif 1x, img/work-gkod-mobile@2x.avif 2x">
+                  <source type="image/webp" srcset="img/work-gkod-mobile@1x.webp 1x, img/work-gkod-mobile@2x.webp 2x">
+                  <img src="img/work-gkod-mobile@1x.jpg" srcset="img/work-gkod-mobile@2x.jpg 2x" width="280" height="280" alt="Screenshot of the clinical oncology center website" loading="lazy" itemprop="image">
                 </picture>
               </div>
               <div class="work__content">
@@ -273,12 +274,12 @@
             <article class="work" itemscope itemtype="https://schema.org/WebSite" itemref="about">
               <div class="work__image">
                 <picture>
-                  <source srcset="img/work-fanttex-tablet@1x.avif 1x, img/work-fanttex-tablet@2x.avif 2x" media="(min-width: 768px)" type="image/avif">
-                  <source srcset="img/work-fanttex-mobile@1x.avif 1x, img/work-fanttex-mobile@2x.avif 2x" type="image/avif">
-                  <source srcset="img/work-fanttex-tablet@1x.webp 1x, img/work-fanttex-tablet@2x.webp 2x" media="(min-width: 768px)" type="image/webp">
-                  <source srcset="img/work-fanttex-mobile@1x.webp 1x, img/work-fanttex-mobile@2x.webp 2x" type="image/webp">
-                  <source srcset="img/work-fanttex-tablet@1x.jpg 1x, img/work-fanttex-tablet@2x.jpg 2x" media="(min-width: 768px)" type="image/jpeg">
-                  <img src="img/work-fanttex-mobile@1x.jpg" srcset="img/work-fanttex-mobile@2x.jpg 2x" alt="Screenshot of the online store Fanttex" width="280" height="280" loading="lazy" itemprop="image">
+                  <source type="image/avif" media="(min-width: 768px)" srcset="img/work-fanttex-tablet@1x.avif 1x, img/work-fanttex-tablet@2x.avif 2x" width="339" height="255">
+                  <source type="image/webp" media="(min-width: 768px)" srcset="img/work-fanttex-tablet@1x.webp 1x, img/work-fanttex-tablet@2x.webp 2x" width="339" height="255">
+                  <source type="image/jpeg" media="(min-width: 768px)" srcset="img/work-fanttex-tablet@1x.jpg 1x, img/work-fanttex-tablet@2x.jpg 2x" width="339" height="255">
+                  <source type="image/avif" srcset="img/work-fanttex-mobile@1x.avif 1x, img/work-fanttex-mobile@2x.avif 2x">
+                  <source type="image/webp" srcset="img/work-fanttex-mobile@1x.webp 1x, img/work-fanttex-mobile@2x.webp 2x">
+                  <img src="img/work-fanttex-mobile@1x.jpg" srcset="img/work-fanttex-mobile@2x.jpg 2x" width="280" height="280" alt="Screenshot of the online store Fanttex" loading="lazy" itemprop="image">
                 </picture>
               </div>
               <div class="work__content">
@@ -306,12 +307,12 @@
             <article class="work" itemscope itemtype="https://schema.org/WebSite" itemref="about">
               <div class="work__image">
                 <picture>
-                  <source srcset="img/work-maggregator-tablet@1x.avif 1x, img/work-maggregator-tablet@2x.avif 2x" media="(min-width: 768px)" type="image/avif">
-                  <source srcset="img/work-maggregator-mobile@1x.avif 1x, img/work-maggregator-mobile@2x.avif 2x" type="image/avif">
-                  <source srcset="img/work-maggregator-tablet@1x.webp 1x, img/work-maggregator-tablet@2x.webp 2x" media="(min-width: 768px)" type="image/webp">
-                  <source srcset="img/work-maggregator-mobile@1x.webp 1x, img/work-maggregator-mobile@2x.webp 2x" type="image/webp">
-                  <source srcset="img/work-maggregator-tablet@1x.jpg 1x, img/work-maggregator-tablet@2x.jpg 2x" media="(min-width: 768px)" type="image/jpeg">
-                  <img src="img/work-maggregator-mobile@1x.jpg" srcset="img/work-maggregator-mobile@2x.jpg 2x" alt="Screenshot of the music digital aggregator website" width="280" height="280" loading="lazy" itemprop="image">
+                  <source type="image/avif" media="(min-width: 768px)" srcset="img/work-maggregator-tablet@1x.avif 1x, img/work-maggregator-tablet@2x.avif 2x" width="339" height="255">
+                  <source type="image/webp" media="(min-width: 768px)" srcset="img/work-maggregator-tablet@1x.webp 1x, img/work-maggregator-tablet@2x.webp 2x" width="339" height="255">
+                  <source type="image/jpeg" media="(min-width: 768px)" srcset="img/work-maggregator-tablet@1x.jpg 1x, img/work-maggregator-tablet@2x.jpg 2x" width="339" height="255">
+                  <source type="image/avif" srcset="img/work-maggregator-mobile@1x.avif 1x, img/work-maggregator-mobile@2x.avif 2x">
+                  <source type="image/webp" srcset="img/work-maggregator-mobile@1x.webp 1x, img/work-maggregator-mobile@2x.webp 2x">
+                  <img src="img/work-maggregator-mobile@1x.jpg" srcset="img/work-maggregator-mobile@2x.jpg 2x" width="280" height="280" alt="Screenshot of the music digital aggregator website" loading="lazy" itemprop="image">
                 </picture>
               </div>
               <div class="work__content">
@@ -342,12 +343,12 @@
             <article class="work" itemscope itemtype="https://schema.org/WebSite" itemref="about">
               <div class="work__image">
                 <picture>
-                  <source srcset="img/work-rapidcards-tablet@1x.avif 1x, img/work-rapidcards-tablet@2x.avif 2x" media="(min-width: 768px)" type="image/avif">
-                  <source srcset="img/work-rapidcards-mobile@1x.avif 1x, img/work-rapidcards-mobile@2x.avif 2x" type="image/avif">
-                  <source srcset="img/work-rapidcards-tablet@1x.webp 1x, img/work-rapidcards-tablet@2x.webp 2x" media="(min-width: 768px)" type="image/webp">
-                  <source srcset="img/work-rapidcards-mobile@1x.webp 1x, img/work-rapidcards-mobile@2x.webp 2x" type="image/webp">
-                  <source srcset="img/work-rapidcards-tablet@1x.jpg 1x, img/work-rapidcards-tablet@2x.jpg 2x" media="(min-width: 768px)" type="image/jpeg">
-                  <img src="img/work-rapidcards-mobile@1x.jpg" srcset="img/work-rapidcards-mobile@2x.jpg 2x" alt="Screenshot of the Rapid Business Cards app website" width="280" height="280" loading="lazy" itemprop="image">
+                  <source type="image/avif" media="(min-width: 768px)" srcset="img/work-rapidcards-tablet@1x.avif 1x, img/work-rapidcards-tablet@2x.avif 2x" width="339" height="255">
+                  <source type="image/webp" media="(min-width: 768px)" srcset="img/work-rapidcards-tablet@1x.webp 1x, img/work-rapidcards-tablet@2x.webp 2x" width="339" height="255">
+                  <source type="image/jpeg" media="(min-width: 768px)" srcset="img/work-rapidcards-tablet@1x.jpg 1x, img/work-rapidcards-tablet@2x.jpg 2x" width="339" height="255">
+                  <source type="image/avif" srcset="img/work-rapidcards-mobile@1x.avif 1x, img/work-rapidcards-mobile@2x.avif 2x">
+                  <source type="image/webp" srcset="img/work-rapidcards-mobile@1x.webp 1x, img/work-rapidcards-mobile@2x.webp 2x">
+                  <img src="img/work-rapidcards-mobile@1x.jpg" srcset="img/work-rapidcards-mobile@2x.jpg 2x" width="280" height="280" alt="Screenshot of the Rapid Business Cards app website" loading="lazy" itemprop="image">
                 </picture>
               </div>
               <div class="work__content">
@@ -382,7 +383,7 @@
     <footer class="footer" id="contacts">
       <div class="footer__wrapper container">
         <div class="footer__logo logo">
-          <img src="img/logo.svg" alt="WebDevDen website logo" width="171" height="20">
+          <img src="img/logo.svg" width="171" height="20" alt="WebDevDen website logo">
         </div>
         <div class="footer__contacts contacts">
           <p class="contacts__text">This is where you can contact me if you like</p>
@@ -391,9 +392,8 @@
             <a class="button" href="https://t.me/AntonNorthern" target="_blank" rel="noopener noreferrer" style="--color-brand: #26a5e4;" itemprop="sameAs">Telegram</a>
           </div>
         </div>
-        <small class="footer__copyright">Sevryukov Anton Sergeevich © 2021-2023</small>
+        <small class="footer__copyright">Sevryukov Anton Sergeevich © 2021-2024</small>
       </div>
     </footer>
-    <script src="js/main.min.js"></script>
   </body>
 </html>

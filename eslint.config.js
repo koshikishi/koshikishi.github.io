@@ -1,13 +1,11 @@
 import config from '@koshikishi/eslint-config';
-import {Legacy} from '@eslint/eslintrc';
-
-const {globals} = Legacy.environments.get('browser');
+import globals from 'globals';
 
 export default [
   ...config,
   {
     languageOptions: {
-      globals,
+      globals: globals.browser,
     },
   },
 ];

@@ -1,6 +1,5 @@
 import {removeAnimationClass} from '../utils/animation';
 
-const ANIMATION_DURATION = 300;
 const MEDIA_QUERY = '(width < 768px)';
 const ElementClass = {
   HEADER: 'header',
@@ -35,8 +34,8 @@ const toggleMenu = (doOpen = !menu.classList.contains(ElementClass.MENU_OPENED))
     menu.classList.add(ElementClass.MENU_OPENED);
     menuToggle.classList.add(ElementClass.TOGGLE_OPENED);
   } else {
-    removeAnimationClass(menu, ElementClass.MENU_OPENED, ANIMATION_DURATION);
-    removeAnimationClass(menuToggle, ElementClass.TOGGLE_OPENED, ANIMATION_DURATION);
+    removeAnimationClass(menu, ElementClass.MENU_OPENED);
+    removeAnimationClass(menuToggle, ElementClass.TOGGLE_OPENED);
   }
 
   menuToggle.lastElementChild.textContent = toggleText;

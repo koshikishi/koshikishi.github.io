@@ -6,6 +6,9 @@ $viewport-mobile: 320px;
 $viewport-tablet: 768px;
 
 :root {
+  // Animation
+  --animation-duration: 0.3s;
+
   // Colors
   --color-white: #ffffff;
   --color-dark: #272727;
@@ -23,7 +26,4 @@ $viewport-tablet: 768px;
     --color-bg: var(--color-dark);
     --color-fg: var(--color-white);
   }
-
-  // Animation
-  --animation-duration: 0.3s;
 }

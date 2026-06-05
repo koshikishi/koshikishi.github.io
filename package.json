@@ -17,6 +17,7 @@
     "lint:spaces": "ec -exclude vendor",
     "lint:markup": "html-validator src --continue --quiet",
     "lint:html": "linthtml src/**/*.html",
+    "lint:bem": "bemlint src/**/*.html",
     "lint:styles": "stylelint src/scss/**/*.scss",
     "lint:scripts": "eslint src/js/ --ignore-pattern **/vendor",
     "optimize": "run-p optimize:**",
@@ -24,6 +25,7 @@
     "optimize:vector": "gulp vector"
   },
   "devDependencies": {
+    "@firefoxic/bemlint": "^6.0.4",
     "@koshikishi/eslint-config": "^5.1.0",
     "@koshikishi/linthtml-config": "^3.0.1",
     "@koshikishi/stylelint-config": "^5.0.2",

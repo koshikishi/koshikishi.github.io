@@ -3,8 +3,8 @@ build/
 src/.raw/**/*.*
 !src/.raw/**/.gitkeep
 *.log
-.idea
+.idea/
 *.sublime*
-.vscode
+.vscode/
 .DS_Store
 Thumbs.db

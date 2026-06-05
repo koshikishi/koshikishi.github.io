@@ -51,7 +51,7 @@
     "w3c-html-validator": "^2.2.1"
   },
   "engines": {
-    "node": "^20 || ^22"
+    "node": ">=24"
   },
   "private": true,
   "browserslist": [

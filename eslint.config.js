@@ -1,11 +1,8 @@
+import {defineConfig} from 'eslint/config';
 import config from '@koshikishi/eslint-config';
-import globals from 'globals';
 
-export default [
-  ...config,
+export default defineConfig([
   {
-    languageOptions: {
-      globals: globals.browser,
-    },
+    extends: [config],
   },
-];
+]);

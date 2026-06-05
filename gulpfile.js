@@ -97,6 +97,7 @@ const processScripts = () => {
   return src(`${Path.Source.SCRIPTS}/main.js`)
     .pipe(plumber())
     .pipe(esbuild({
+      entryPoints: [`${Path.Source.SCRIPTS}/main.js`],
       bundle: true,
       format: 'esm',
       outfile: 'main.min.js',

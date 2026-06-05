@@ -146,7 +146,9 @@ const optimizeRaster = () => {
     return {formats};
   };
 
-  return src(`${Path.Raw.IMAGES}/**/*.{png,jpg,jpeg}`)
+  return src(`${Path.Raw.IMAGES}/**/*.{png,jpg,jpeg}`, {
+    encoding: false,
+  })
     .pipe(plumber())
     .pipe(sharp(createFormatOptions()))
     .pipe(dest(Path.Source.IMAGES));

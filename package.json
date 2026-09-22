@@ -25,16 +25,16 @@
     "optimize:vector": "gulp vector"
   },
   "devDependencies": {
-    "@firefoxic/bemlint": "^6.0.4",
-    "@koshikishi/eslint-config": "^5.1.0",
-    "@koshikishi/linthtml-config": "^3.0.1",
-    "@koshikishi/stylelint-config": "^5.0.2",
+    "@firefoxic/bemlint": "^6.0.5",
+    "@koshikishi/eslint-config": "^5.1.2",
+    "@koshikishi/linthtml-config": "^3.0.2",
+    "@koshikishi/stylelint-config": "^5.0.3",
     "@linthtml/linthtml": "^0.10.2",
     "browser-sync": "^3.0.4",
     "browserslist-to-esbuild": "^2.1.1",
-    "editorconfig-checker": "^6.1.1",
-    "esbuild": "^0.28.0",
-    "eslint": "^10.4.1",
+    "editorconfig-checker": "^7.0.0",
+    "esbuild": "^0.28.2",
+    "eslint": "^10.11.0",
     "gulp": "^5.0.1",
     "gulp-esbuild": "^0.15.0",
     "gulp-html-minifier-terser": "^8.0.0",
@@ -44,13 +44,13 @@
     "gulp-sass": "^6.0.1",
     "gulp-sharp-responsive": "^0.4.1",
     "gulp-svgmin": "^4.1.0",
-    "npm-run-all2": "^9.0.1",
-    "postcss": "^8.5.15",
-    "postcss-lightningcss": "^1.1.0",
+    "npm-run-all2": "^9.0.3",
+    "postcss": "^8.5.28",
+    "postcss-lightningcss": "^1.1.1",
     "postcss-normalize": "^13.0.1",
-    "sass": "^1.100.0",
-    "stylelint": "^17.12.0",
-    "w3c-html-validator": "^2.2.1"
+    "sass": "^1.104.1",
+    "stylelint": "^17.15.0",
+    "w3c-html-validator": "^2.2.3"
   },
   "engines": {
     "node": ">=24"
